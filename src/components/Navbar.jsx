@@ -107,10 +107,10 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-xs xl:text-sm shadow-sm transition-all hover:scale-105 active:scale-95 shrink-0 whitespace-nowrap"
-                title="WhatsApp ile Konum Gönder"
+                title="WhatsApp ile İletişime Geç"
               >
                 <MessageCircle className="w-4 h-4 fill-white text-whatsapp shrink-0" />
-                <span>WhatsApp Konum</span>
+                <span>WhatsApp İle Ulaş</span>
               </a>
 
               <a

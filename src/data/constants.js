@@ -7,7 +7,7 @@ export const COMPANY_INFO = {
   email: "halisotokurtarma06@gmail.com",
   emailLink: "mailto:halisotokurtarma06@gmail.com",
   address: "Pınarbaşı Mah. Vatan Cad. No:106/7 Sincan / Ankara",
-  whatsappMessage: "ÇEKİCİYE İHTİYACIM VAR YARDIMCI OLUR MUSUNUZ?",
+  whatsappMessage: "Merhaba Halis Bey, çekiciye ihtiyacım var yardımcı olur musunuz?",
   get whatsappLink() {
     return `https://wa.me/905353579525?text=${encodeURIComponent(this.whatsappMessage)}`;
   },
