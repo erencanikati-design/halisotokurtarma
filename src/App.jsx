@@ -6,7 +6,6 @@ import QuickNeeds from './components/QuickNeeds';
 import Services from './components/Services';
 import Gallery from './components/Gallery';
 import WhyUs from './components/WhyUs';
-import Calculator from './components/Calculator';
 import CoverageAreas from './components/CoverageAreas';
 import HowItWorks from './components/HowItWorks';
 import Testimonials from './components/Testimonials';
@@ -27,7 +26,6 @@ export default function App() {
         <Services />
         <Gallery />
         <WhyUs />
-        <Calculator />
         <CoverageAreas />
         <HowItWorks />
         <Testimonials />
