@@ -23,7 +23,7 @@ export const GALLERY_IMAGES = [
     src: "/images/arac-1.jpeg",
     title: "Sincan 7/24 Acil Kurtarma",
     category: "Oto Çekici",
-    desc: "Kayar kasa hidrolik platform ile hasarsız yükleme"
+    desc: "Özel rampa ve çeki ekipmanıyla hasarsız yükleme"
   },
   {
     id: 2,
@@ -91,9 +91,9 @@ export const GALLERY_IMAGES = [
   {
     id: 11,
     src: "/images/arac-11.jpeg",
-    title: "Modern Kayar Kasa Filomuz",
+    title: "Modern Kurtarıcı Filomuz",
     category: "Filo",
-    desc: "Son teknoloji hidrolik donanımlı kurtarıcı araçlar"
+    desc: "Güvenli çeki ve sabitleme donanımlı kurtarıcı araçlar"
   },
   {
     id: 12,
@@ -108,11 +108,11 @@ export const SERVICES = [
   {
     id: "oto-cekici",
     title: "Oto Çekici & Kurtarma",
-    desc: "Binek, SUV, hafif ticari ve elektrikli araçlarınız için son teknoloji hidrolik kayar kasa çekicilerimizle güvenli taşıma.",
+    desc: "Binek, SUV ve hafif ticari araçlarınız için tam donanımlı çekici araçlarımızla güvenli, titiz ve kaskolu taşıma.",
     image: "/images/arac-1.jpeg",
     icon: "Truck",
     tag: "En Çok Tercih Edilen",
-    features: ["Kayar Kasa Platform", "Kaskolu & Sigortalı Taşıma", "Hasarsız Yükleme Garantisi"]
+    features: ["Özel Rampalı Platform", "Kaskolu & Sigortalı Taşıma", "Hasarsız Yükleme Garantisi"]
   },
   {
     id: "acil-yol-yardim",
@@ -134,12 +134,12 @@ export const SERVICES = [
   },
   {
     id: "luks-arac",
-    title: "Lüks & Alçak Şasi Araç Çekimi",
-    desc: "Spor otomobiller, modifiyeli ve alçak şasili araçlar için sıfır eğimli hidrolik kayar kasa platform ile tampon temasını önleyen özel çekici desteği.",
+    title: "Hasarsız Özel Araç Taşıma",
+    desc: "Binek ve SUV araçlarınız için özel çeki ve sabitleme aparatlarımızla tampon ve şasiye zarar vermeden güvenli taşıma.",
     image: "/images/arac-2.jpeg",
     icon: "ShieldAlert",
     tag: "Hassas Taşıma",
-    features: ["Sıfır Tampon Teması", "Özel Sabitleme Kemerleri", "Tam Kapsamlı Taşıma Kaskosu"]
+    features: ["Tampon Koruyucu Aparat", "Özel Sabitleme Kemerleri", "Tam Kapsamlı Taşıma Kaskosu"]
   },
   {
     id: "motosiklet",
@@ -259,8 +259,8 @@ export const WHY_CHOOSE_US = [
     icon: "BadgePercent"
   },
   {
-    title: "Modern Kayar Kasa Filo",
-    desc: "Alçak şasili, lüks ve spor araçlara dahi zarar vermeyen hidrolik kayar kasa platformlar.",
+    title: "Bakımlı & Güvenilir Filo",
+    desc: "Tüm güvenlik ve çeki donanımlarına sahip, periyodik bakımları eksiksiz kurtarıcı araçlar.",
     icon: "Truck"
   },
   {

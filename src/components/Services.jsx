@@ -36,7 +36,7 @@ export default function Services() {
             Oto Kurtarma & Yol Yardım Hizmetlerimiz
           </h2>
           <p className="text-slate-400 text-base sm:text-lg mt-4">
-            Ankara genelinde her türlü araç segmenti için son model kayar kasa platformlarımız ve uzman ekibimizle 7/24 hizmetinizdeyiz.
+            Ankara genelinde binek, SUV ve ticari araçlarınız için tam donanımlı kurtarıcı filomuz ve uzman ekibimizle 7/24 hizmetinizdeyiz.
           </p>
         </div>
 

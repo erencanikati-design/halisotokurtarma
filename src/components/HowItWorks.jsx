@@ -20,7 +20,7 @@ const STEPS = [
   {
     num: "03",
     title: "Güvenli ve Kaskolu Teslimat",
-    desc: "Aracınız özel hidrolik kayar kasa platformumuza sıfır hasar prensibiyle yüklenir ve dilediğiniz yetkili servise veya adrese teslim edilir.",
+    desc: "Aracınız çekici platformumuza sıfır hasar prensibiyle titizlikle yüklenir ve dilediğiniz yetkili servise veya adrese güvenle teslim edilir.",
     icon: ShieldCheck,
     badge: "3. Adım • %100 Güven"
   }

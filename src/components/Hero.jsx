@@ -4,7 +4,7 @@ import { COMPANY_INFO } from '../data/constants';
 import { sendWhatsAppWithLocation } from '../utils/whatsapp';
 
 const HERO_IMAGES = [
-  { src: '/images/arac-1.jpeg', label: 'Kayar Kasa Kurtarıcı Filomuz' },
+  { src: '/images/arac-1.jpeg', label: 'Kurtarıcı Araç Filomuz' },
   { src: '/images/arac-2.jpeg', label: 'Özel Araç Taşıma' },
   { src: '/images/arac-3.jpeg', label: 'Kaza & Vinçli Kurtarma' },
   { src: '/images/arac-5.jpeg', label: '7/24 Nöbetçi Çekici' },

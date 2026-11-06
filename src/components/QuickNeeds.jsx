@@ -9,7 +9,7 @@ const SITUATIONS = [
     subtitle: "Motor, şanzıman veya mekanik arıza nedeniyle araç yolda kaldı.",
     icon: Car,
     color: "from-amber-500/20 to-amber-600/10 text-amber-400 border-amber-500/30",
-    actionNote: "En yakın kayar kasa çekicimizi hemen yönlendirelim.",
+    actionNote: "En yakın nöbetçi çekici ekibimizi hemen yönlendirelim.",
     msg: "Merhaba Halis Bey, aracım arızalandı ve yolda kaldım. Çekiciye ihtiyacım var yardımcı olur musunuz?"
   },
   {
