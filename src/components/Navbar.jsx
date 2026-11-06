@@ -18,7 +18,7 @@ export default function Navbar() {
     { name: 'Hizmetlerimiz', href: '#hizmetler' },
     { name: 'Foto Galeri', href: '#galeri' },
     { name: 'Neden Biz?', href: '#neden-biz' },
-    { name: 'Hizmet Bölgeleri', href: '#bolgeler' },
+    { name: 'Bölgeler', href: '#bolgeler' },
     { name: 'Fiyat & Teklif', href: '#hesapla' },
     { name: 'Yorumlar', href: '#yorumlar' },
     { name: 'SSS', href: '#sss' },
@@ -57,14 +57,14 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4">
             {/* Brand Logo */}
-            <a href="#" className="flex items-center gap-3 group">
-              <div className="relative">
+            <a href="#" className="flex items-center gap-3 group shrink-0">
+              <div className="relative shrink-0">
                 <img
                   src={COMPANY_INFO.logoUrl}
                   alt="Halis Oto Kurtarma Logo"
-                  className="h-12 sm:h-14 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
+                  className="h-10 sm:h-12 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                     if (e.currentTarget.nextElementSibling) {
@@ -72,27 +72,27 @@ export default function Navbar() {
                     }
                   }}
                 />
-                <div style={{ display: 'none' }} className="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500 to-amber-600 items-center justify-center text-slate-950 shadow-lg">
+                <div style={{ display: 'none' }} className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-amber-600 items-center justify-center text-slate-950 shadow-lg">
                   <span className="font-black text-lg">H</span>
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-brand-400 transition-colors">
+                <span className="text-lg sm:text-xl xl:text-2xl font-black tracking-tight text-white group-hover:text-brand-400 transition-colors whitespace-nowrap">
                   {COMPANY_INFO.name}
                 </span>
-                <span className="text-[11px] font-semibold text-brand-400 tracking-wider uppercase -mt-0.5">
+                <span className="text-[10px] sm:text-[11px] font-semibold text-brand-400 tracking-wider uppercase -mt-0.5 whitespace-nowrap">
                   Halis Kırtepe • 7/24 Acil Yol Yardım
                 </span>
               </div>
             </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-6">
+            <nav className="hidden xl:flex items-center gap-4 2xl:gap-6 shrink-0">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-medium text-slate-300 hover:text-brand-400 transition-colors"
+                  className="text-xs 2xl:text-sm font-medium text-slate-300 hover:text-brand-400 transition-colors whitespace-nowrap"
                 >
                   {link.name}
                 </a>
@@ -100,32 +100,32 @@ export default function Navbar() {
             </nav>
 
             {/* CTA Buttons */}
-            <div className="hidden sm:flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-2.5 shrink-0 pl-3 xl:pl-4 xl:border-l xl:border-slate-800">
               <a
                 href={COMPANY_INFO.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-bold text-sm shadow-md shadow-whatsapp/20 transition-all hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-black text-xs xl:text-sm shadow-md shadow-whatsapp/20 transition-all hover:scale-105 active:scale-95 shrink-0 whitespace-nowrap"
                 title="WhatsApp ile Konum Gönder"
               >
-                <MessageCircle className="w-4 h-4 fill-slate-950 text-whatsapp" />
-                <span className="hidden xl:inline">WhatsApp</span> Konum
+                <MessageCircle className="w-4 h-4 fill-slate-950 text-whatsapp shrink-0" />
+                <span>WhatsApp Konum</span>
               </a>
 
               <a
                 href={COMPANY_INFO.telLink}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-emergency-600 to-red-600 hover:from-emergency-500 hover:to-red-500 text-white font-bold text-sm shadow-lg shadow-emergency-600/30 transition-all hover:scale-105 active:scale-95 beacon-red"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-emergency-600 to-red-600 hover:from-emergency-500 hover:to-red-500 text-white font-black text-xs xl:text-sm shadow-lg shadow-emergency-600/30 transition-all hover:scale-105 active:scale-95 beacon-red shrink-0 whitespace-nowrap"
               >
-                <Phone className="w-4 h-4" />
-                <span>{COMPANY_INFO.phone}</span>
+                <Phone className="w-4 h-4 shrink-0" />
+                <span className="whitespace-nowrap font-black tracking-wide">{COMPANY_INFO.phone}</span>
               </a>
             </div>
 
             {/* Mobile menu trigger button */}
-            <div className="flex items-center gap-2 sm:hidden">
+            <div className="flex items-center gap-2 xl:hidden">
               <a
                 href={COMPANY_INFO.telLink}
-                className="p-2.5 rounded-lg bg-emergency-600 text-white font-bold shadow-md"
+                className="md:hidden p-2.5 rounded-lg bg-emergency-600 text-white font-bold shadow-md shrink-0"
                 aria-label="Hemen Ara"
               >
                 <Phone className="w-5 h-5" />
@@ -133,7 +133,7 @@ export default function Navbar() {
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
+                className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white shrink-0"
                 aria-label="Menüyü Aç"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -144,7 +144,7 @@ export default function Navbar() {
 
         {/* Mobile dropdown menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-800 bg-slate-950/98 px-4 pt-3 pb-6 mt-3 space-y-3 shadow-2xl animate-in slide-in-from-top duration-200">
+          <div className="xl:hidden border-t border-slate-800 bg-slate-950/98 px-4 pt-3 pb-6 mt-3 space-y-3 shadow-2xl animate-in slide-in-from-top duration-200">
             <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800 flex items-center justify-between">
               <div>
                 <p className="text-xs text-slate-400">Yetkili / İşletmeci</p>
