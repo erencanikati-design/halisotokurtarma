@@ -25,7 +25,7 @@ export default function EmergencyBar() {
           type="button"
           onClick={handleWhatsAppClick}
           disabled={loading}
-          className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-whatsapp hover:bg-whatsapp-hover active:scale-95 text-white font-black text-sm shadow-md shadow-whatsapp/25 transition-all disabled:opacity-75"
+          className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-whatsapp hover:bg-whatsapp-hover active:scale-95 text-white font-black text-sm shadow-md shadow-whatsapp/25 transition-all disabled:opacity-85 cursor-pointer"
         >
           <div className="relative">
             {loading ? (
@@ -39,7 +39,10 @@ export default function EmergencyBar() {
           </div>
           <span className="leading-tight text-center">
             {loading ? (
-              <span className="text-xs">Konum Alınıyor...</span>
+              <>
+                <span className="text-xs font-bold">Konum Alınıyor...</span><br />
+                <span className="text-[9px] font-medium opacity-90">Lütfen bekleyin</span>
+              </>
             ) : (
               <>
                 WhatsApp<br />

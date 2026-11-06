@@ -4,7 +4,7 @@ import { COMPANY_INFO } from '../data/constants';
  * Normalizes phone number into international format without leading zero
  * e.g., "05353579525" -> "905353579525"
  */
-const getCleanPhone = () => {
+export const getCleanPhone = () => {
   const raw = COMPANY_INFO.rawPhone || '05353579525';
   const clean = raw.replace(/\D/g, '');
   if (clean.startsWith('90')) return clean;
@@ -13,7 +13,7 @@ const getCleanPhone = () => {
 };
 
 /**
- * Opens WhatsApp with prefilled message, attempting to attach live GPS coordinates if permitted.
+ * Opens WhatsApp with prefilled message, attempting to attach live GPS coordinates.
  * @param {string} customMsg - Optional custom message
  * @param {function} onStatusChange - Optional callback for loading state
  */
@@ -25,50 +25,56 @@ export const sendWhatsAppWithLocation = (customMsg = null, onStatusChange = null
 
   const openWhatsApp = (msg) => {
     const url = `https://wa.me/${targetPhone}?text=${encodeURIComponent(msg)}`;
-    // window.location.href is much more reliable on mobile devices than window.open
     window.location.href = url;
   };
 
   if (onStatusChange) onStatusChange('getting_location');
 
-  let resolved = false;
+  let finished = false;
 
-  // Set a safety timeout fallback in case user ignores geolocation prompt
-  const fallbackTimer = setTimeout(() => {
-    if (!resolved) {
-      resolved = true;
-      if (onStatusChange) onStatusChange('fallback');
-      openWhatsApp(baseMessage);
-    }
-  }, 4000);
+  const completeWithLocation = (lat, lng) => {
+    if (finished) return;
+    finished = true;
+    if (onStatusChange) onStatusChange('ready');
+    const mapsUrl = `https://maps.google.com/?q=${lat},${lng}`;
+    const finalMessage = `${baseMessage}\n\n📍 Bulunduğum Canlı Konum:\n${mapsUrl}`;
+    openWhatsApp(finalMessage);
+  };
 
-  if ('geolocation' in navigator) {
+  const completeFallback = () => {
+    if (finished) return;
+    finished = true;
+    if (onStatusChange) onStatusChange('fallback');
+    const finalMessage = `${baseMessage}\n(Not: WhatsApp içindeki ataş 📎 simgesinden konumumu gönderebilirim.)`;
+    openWhatsApp(finalMessage);
+  };
+
+  if (navigator.geolocation) {
+    // 10 second timeout for mobile GPS locks
+    const timer = setTimeout(() => {
+      completeFallback();
+    }, 9000);
+
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        if (resolved) return;
-        resolved = true;
-        clearTimeout(fallbackTimer);
-        if (onStatusChange) onStatusChange('ready');
+        clearTimeout(timer);
         const lat = position.coords.latitude.toFixed(6);
         const lng = position.coords.longitude.toFixed(6);
-        const mapsUrl = `https://maps.google.com/?q=${lat},${lng}`;
-        const finalMessage = `${baseMessage}\n\n📍 Canlı Konumum: ${mapsUrl}`;
-        openWhatsApp(finalMessage);
+        completeWithLocation(lat, lng);
       },
       (error) => {
-        if (resolved) return;
-        resolved = true;
-        clearTimeout(fallbackTimer);
-        if (onStatusChange) onStatusChange('fallback');
-        openWhatsApp(baseMessage);
+        clearTimeout(timer);
+        console.warn('Geolocation error or denied:', error);
+        completeFallback();
       },
-      { timeout: 3500, enableHighAccuracy: true, maximumAge: 30000 }
+      {
+        enableHighAccuracy: false, // Much faster lock on mobile phones using cellular/WiFi
+        timeout: 8000,
+        maximumAge: 60000
+      }
     );
   } else {
-    resolved = true;
-    clearTimeout(fallbackTimer);
-    if (onStatusChange) onStatusChange('fallback');
-    openWhatsApp(baseMessage);
+    completeFallback();
   }
 };
 
