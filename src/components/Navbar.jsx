@@ -35,12 +35,12 @@ export default function Navbar() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
             </span>
-            <span>🚨 <strong>ANKARA 7/24 NÖBETÇİ OTO ÇEKİCİ</strong> — Ortalama 15-30 Dk İntikal</span>
+            <span>🚨 <strong>ANKARA 7/24 NÖBETÇİ OTO ÇEKİCİ</strong> — Sincan & Tüm Ankara Geneli</span>
           </div>
           <div className="hidden sm:flex items-center gap-4 text-xs font-medium">
-            <span className="flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-white/90" /> Sincan & Tüm Ankara
-            </span>
+            <a href={COMPANY_INFO.emailLink} className="hover:underline flex items-center gap-1 text-white">
+              ✉️ {COMPANY_INFO.email}
+            </a>
             <span className="flex items-center gap-1">
               <Clock className="w-3.5 h-3.5 text-white/90" /> 7 Gün 24 Saat Açık
             </span>

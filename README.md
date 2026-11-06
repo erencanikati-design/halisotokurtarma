@@ -26,6 +26,7 @@ Ankara genelinde 7/24 oto kurtarma, çekici ve acil yol yardım hizmeti sunan **
 - **Firma Adı:** HALİS OTO KURTARMA
 - **Yetkili / İşletmeci:** Halis Kırtepe
 - **Telefon:** [0535 357 95 25](tel:05353579525)
+- **E-Posta:** [halisotokurtarma06@gmail.com](mailto:halisotokurtarma06@gmail.com)
 - **WhatsApp:** 0535 357 95 25 (Otomatik mesaj: *ÇEKİCİYE İHTİYACIM VAR YARDIMCI OLUR MUSUNUZ?*)
 - **Adres:** PINARBAŞI MAH. VATAN CAD. NO:106/7 SİNCAN / ANKARA
 - **Hizmet Saatleri:** 7 Gün 24 Saat Kesintisiz

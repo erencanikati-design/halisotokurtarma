@@ -8,14 +8,14 @@ const STEPS = [
     title: "Arayın veya Konum Atın",
     desc: "0535 357 95 25 numaralı acil hattımızı arayın veya sitemizdeki yeşil butonla WhatsApp üzerinden tek tıkla konumunuzu iletin.",
     icon: PhoneCall,
-    badge: "1. Adım • 30 Saniye"
+    badge: "1. Adım • Hızlı İletişim"
   },
   {
     num: "02",
     title: "En Yakın Çekici Yola Çıksın",
-    desc: "Ankara'da size en yakın nöbetçi çekici aracımız anında rotasını belirler ve ortalama 15-30 dakika içinde yanınıza ulaşır.",
+    desc: "Ankara'da size en yakın nöbetçi çekici aracımız anında rotasını belirler ve en hızlı şekilde yanınıza ulaşır.",
     icon: Navigation,
-    badge: "2. Adım • 15-30 Dakika"
+    badge: "2. Adım • Seri İntikal"
   },
   {
     num: "03",

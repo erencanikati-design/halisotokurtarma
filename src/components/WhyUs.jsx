@@ -60,8 +60,8 @@ export default function WhyUs() {
               <p className="text-xs sm:text-sm text-slate-300 mt-1 font-medium">Sektörel Tecrübe</p>
             </div>
             <div className="pt-4 lg:pt-0">
-              <div className="text-3xl sm:text-4xl font-black text-white">15-30 Dk</div>
-              <p className="text-xs sm:text-sm text-slate-300 mt-1 font-medium">Ortalama İntikal Süresi</p>
+              <div className="text-3xl sm:text-4xl font-black text-white">Ankara</div>
+              <p className="text-xs sm:text-sm text-slate-300 mt-1 font-medium">Tüm İlçeler & Otoyollar</p>
             </div>
             <div className="pt-4 lg:pt-0">
               <div className="text-3xl sm:text-4xl font-black text-emerald-400">%100</div>

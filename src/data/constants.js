@@ -4,6 +4,8 @@ export const COMPANY_INFO = {
   phone: "0535 357 95 25",
   rawPhone: "05353579525",
   telLink: "tel:05353579525",
+  email: "halisotokurtarma06@gmail.com",
+  emailLink: "mailto:halisotokurtarma06@gmail.com",
   address: "Pınarbaşı Mah. Vatan Cad. No:106/7 Sincan / Ankara",
   whatsappMessage: "ÇEKİCİYE İHTİYACIM VAR YARDIMCI OLUR MUSUNUZ?",
   get whatsappLink() {
@@ -12,7 +14,6 @@ export const COMPANY_INFO = {
   logoUrl: "/logo/logo.png",
   operatingHours: "7 Gün 24 Saat Kesintisiz",
   coverageArea: "Ankara'nın Tüm İlçeleri & Çevre Otoyollar",
-  responseTime: "15 - 30 Dakika",
   experienceYears: "10+",
 };
 
@@ -27,9 +28,9 @@ export const GALLERY_IMAGES = [
   {
     id: 2,
     src: "/images/arac-2.jpeg",
-    title: "Eskişehir Yolu Araç Transferi",
-    category: "Taşıma",
-    desc: "Güvenli ve sigortalı şehirler arası sevkiyat"
+    title: "Eskişehir Yolu Güvenli Araç Çekimi",
+    category: "Oto Çekici",
+    desc: "Güvenli ve kaskolu araç çekici hizmeti"
   },
   {
     id: 3,
@@ -50,7 +51,7 @@ export const GALLERY_IMAGES = [
     src: "/images/arac-5.jpeg",
     title: "Etimesgut Gece Nöbetçi Çekici",
     category: "7/24 Acil",
-    desc: "Gece saatlerinde 15 dakikada yerinde destek"
+    desc: "Gece saatlerinde hızlı nöbetçi ekip desteği"
   },
   {
     id: 6,
@@ -64,7 +65,7 @@ export const GALLERY_IMAGES = [
     src: "/images/arac-7.jpeg",
     title: "Otoyol & Çevre Yolu Kurtarma",
     category: "Kurtarma",
-    desc: "Kuzey Marmara ve çevre otoyolu acil müdahale"
+    desc: "Kuzey Çevre Yolu ve otoyol acil müdahale"
   },
   {
     id: 8,
@@ -76,9 +77,9 @@ export const GALLERY_IMAGES = [
   {
     id: 9,
     src: "/images/arac-9.jpeg",
-    title: "Çankaya Çoklu Araç Sevkiyatı",
-    category: "Taşıma",
-    desc: "Şehir içi ve şehirler arası araç nakli"
+    title: "Çankaya Profesyonel Çekici",
+    category: "Oto Çekici",
+    desc: "Şehir içi güvenli araç transferi"
   },
   {
     id: 10,
@@ -132,13 +133,13 @@ export const SERVICES = [
     features: ["Güçlü Vinç Desteği", "Kaza Yeri Güvenliği", "Tutanak & Çekim Desteği"]
   },
   {
-    id: "coklu-tasima",
-    title: "Şehirler Arası Araç Taşıma",
-    desc: "Ankara'dan Türkiye'nin her yerine, veya diğer şehirlerden Ankara'ya tekli ve çoklu güvenli araç nakliyesi.",
+    id: "luks-arac",
+    title: "Lüks & Alçak Şasi Araç Çekimi",
+    desc: "Spor otomobiller, modifiyeli ve alçak şasili araçlar için sıfır eğimli hidrolik kayar kasa platform ile tampon temasını önleyen özel çekici desteği.",
     image: "/images/arac-2.jpeg",
-    icon: "Navigation",
-    tag: "Tüm Türkiye",
-    features: ["Şehirler Arası Sabit Fiyat", "Zamanında Teslimat", "Tam Kapsamlı Taşıma Kaskosu"]
+    icon: "ShieldAlert",
+    tag: "Hassas Taşıma",
+    features: ["Sıfır Tampon Teması", "Özel Sabitleme Kemerleri", "Tam Kapsamlı Taşıma Kaskosu"]
   },
   {
     id: "motosiklet",
@@ -154,29 +155,29 @@ export const SERVICES = [
     title: "Hafif Ticari & Minibüs",
     desc: "Panelvan, kamyonet, minibüs ve uzun şasi ticari araçlarınız için yüksek tonaj kapasiteli özel çekici filosu.",
     image: "/images/arac-8.jpeg",
-    icon: "ShieldAlert",
+    icon: "Truck",
     tag: "Yüksek Kapasite",
     features: ["5 Ton Taşıma Kapasitesi", "Geniş Platform", "İş Kaybını Önleyen Hız"]
   }
 ];
 
 export const ANKARA_DISTRICTS = [
-  { name: "Sincan", central: true, time: "10-15 Dk", desc: "Merkez üssümüz. En hızlı intikal." },
-  { name: "Etimesgut", central: true, time: "15-20 Dk", desc: "Eryaman, Bağlıca, Elvankent dahil." },
-  { name: "Yenimahalle", central: true, time: "15-25 Dk", desc: "Batıkent, Çayyolu, Demetevler, Şentepe." },
-  { name: "Çankaya", central: true, time: "20-30 Dk", desc: "Kızılay, Ümitköy, İncek, Balgat, Oran." },
-  { name: "Keçiören", central: true, time: "20-30 Dk", desc: "Etlik, Ufuktepe, Ovacık, Bağlum." },
-  { name: "Mamak", central: true, time: "25-35 Dk", desc: "Kayaş, Natoyolu, Akdere, Samsun Yolu." },
-  { name: "Altındağ", central: true, time: "20-30 Dk", desc: "Ulus, Siteler, Aydınlıkevler, Karapürçek." },
-  { name: "Gölbaşı", central: true, time: "25-35 Dk", desc: "Mogan, Konya Yolu, İncek bağlantısı." },
-  { name: "Pursaklar", central: true, time: "25-35 Dk", desc: "Havalimanı Yolu ve Saray bölgesi." },
-  { name: "Kahramankazan", central: false, time: "20-30 Dk", desc: "İstanbul Yolu ve Saray Sanayi." },
-  { name: "Polatlı", central: false, time: "30-40 Dk", desc: "Eskişehir Yolu ve Temelli aksı." },
-  { name: "Ayaş", central: false, time: "30-45 Dk", desc: "Beypazarı yolu güzergahı." },
-  { name: "Beypazarı", central: false, time: "45-60 Dk", desc: "Geniş bölge nöbetçi çekici." },
-  { name: "Çubuk", central: false, time: "35-45 Dk", desc: "Havalimanı ve Çubuk ilçesi." },
-  { name: "Akyurt", central: false, time: "30-40 Dk", desc: "Sanayi bölgesi ve çevre aksı." },
-  { name: "Kızılcahamam", central: false, time: "40-50 Dk", desc: "TEM Otoyolu ve Çeltikçi mevkii." }
+  { name: "Sincan", central: true, status: "Merkez Bölge", desc: "Merkez üssümüz. En hızlı yönlendirme." },
+  { name: "Etimesgut", central: true, status: "Nöbetçi Bölge", desc: "Eryaman, Bağlıca, Elvankent dahil." },
+  { name: "Yenimahalle", central: true, status: "Nöbetçi Bölge", desc: "Batıkent, Çayyolu, Demetevler, Şentepe." },
+  { name: "Çankaya", central: true, status: "Nöbetçi Bölge", desc: "Kızılay, Ümitköy, İncek, Balgat, Oran." },
+  { name: "Keçiören", central: true, status: "Nöbetçi Bölge", desc: "Etlik, Ufuktepe, Ovacık, Bağlum." },
+  { name: "Mamak", central: true, status: "Nöbetçi Bölge", desc: "Kayaş, Natoyolu, Akdere, Samsun Yolu." },
+  { name: "Altındağ", central: true, status: "Nöbetçi Bölge", desc: "Ulus, Siteler, Aydınlıkevler, Karapürçek." },
+  { name: "Gölbaşı", central: true, status: "Nöbetçi Bölge", desc: "Mogan, Konya Yolu, İncek bağlantısı." },
+  { name: "Pursaklar", central: true, status: "Nöbetçi Bölge", desc: "Havalimanı Yolu ve Saray bölgesi." },
+  { name: "Kahramankazan", central: false, status: "Nöbetçi Bölge", desc: "İstanbul Yolu ve Saray Sanayi." },
+  { name: "Polatlı", central: false, status: "Nöbetçi Bölge", desc: "Eskişehir Yolu ve Temelli aksı." },
+  { name: "Ayaş", central: false, status: "Nöbetçi Bölge", desc: "Beypazarı yolu güzergahı." },
+  { name: "Beypazarı", central: false, status: "Nöbetçi Bölge", desc: "Geniş bölge nöbetçi çekici." },
+  { name: "Çubuk", central: false, status: "Nöbetçi Bölge", desc: "Havalimanı ve Çubuk ilçesi." },
+  { name: "Akyurt", central: false, status: "Nöbetçi Bölge", desc: "Sanayi bölgesi ve çevre aksı." },
+  { name: "Kızılcahamam", central: false, status: "Nöbetçi Bölge", desc: "TEM Otoyolu ve Çeltikçi mevkii." }
 ];
 
 export const TESTIMONIALS = [
@@ -185,7 +186,7 @@ export const TESTIMONIALS = [
     district: "Sincan / Fatih",
     car: "Volkswagen Passat",
     rating: 5,
-    comment: "Gece saat 02:30'da Sincan OSB dönüşünde aracımın kayışı koptu. Halis Bey'i aradım, 15 dakika dolmadan çekici geldi. Çok kibar ve işini bilen biri. Fiyat da gayet makuldü, teşekkürler.",
+    comment: "Gece saat 02:30'da Sincan OSB dönüşünde aracımın kayışı koptu. Halis Bey'i aradım, hızla çekici geldi. Çok kibar ve işini bilen biri. Fiyat da gayet makuldü, teşekkürler.",
     date: "3 gün önce"
   },
   {
@@ -216,8 +217,8 @@ export const TESTIMONIALS = [
 
 export const FAQS = [
   {
-    q: "Çekici çağırdığımda ne kadar sürede gelirsiniz?",
-    a: "Merkezimiz Sincan'da olmak üzere Ankara'nın muhtelif noktalarında hazır bekleyen araçlarımızla Sincan ve Etimesgut bölgesine ortalama 10-15 dakika, diğer tüm Ankara ilçelerine ise 20-30 dakika içerisinde intikal etmekteyiz."
+    q: "Çekici çağırdığımda süreç nasıl işler?",
+    a: "Bizi aradığınızda veya konum attığınızda nöbetçi çekici aracımız derhal yola çıkar. Trafik durumuna ve bulunduğunuz konuma göre en seri şekilde yanınıza ulaşarak güvenli yükleme sağlar."
   },
   {
     q: "Taşıma esnasında aracım kaskolu / sigortalı mı?",
@@ -243,8 +244,8 @@ export const FAQS = [
 
 export const WHY_CHOOSE_US = [
   {
-    title: "15-30 Dk Hızlı İntikal",
-    desc: "Ankara genelinde stratejik noktalarda nöbetçi araçlarımızla en kısa sürede yanınızdayız.",
+    title: "Hızlı & Güvenli İntikal",
+    desc: "Ankara genelinde hazır bekleyen nöbetçi araçlarımızla en seri şekilde yanınızdayız.",
     icon: "Clock"
   },
   {

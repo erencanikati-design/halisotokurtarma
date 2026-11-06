@@ -5,7 +5,7 @@ import { sendWhatsAppWithLocation } from '../utils/whatsapp';
 
 const HERO_IMAGES = [
   { src: '/images/arac-1.jpeg', tag: 'Sincan Nöbetçi Çekici' },
-  { src: '/images/arac-2.jpeg', tag: 'Şehirler Arası Taşıma' },
+  { src: '/images/arac-2.jpeg', tag: 'Lüks & Spor Araç Taşıma' },
   { src: '/images/arac-3.jpeg', tag: 'Kaza & Vinçli Kurtarma' },
   { src: '/images/arac-5.jpeg', tag: 'Gece 7/24 Yol Yardım' },
 ];
@@ -45,7 +45,7 @@ export default function Hero() {
               </span>
               <span>Ankara Geneli Nöbetçi Çekici Araçlarımız Hazır</span>
               <span className="text-slate-500 hidden sm:inline">|</span>
-              <span className="text-slate-300 hidden sm:inline">15-30 Dk Varış</span>
+              <span className="text-slate-300 hidden sm:inline">7/24 Kesintisiz</span>
             </div>
 
             {/* Main Title */}
@@ -109,7 +109,7 @@ export default function Hero() {
             <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-3 border-t border-slate-800/80 max-w-xl mx-auto lg:mx-0">
               <div className="flex items-center gap-2 text-slate-300 text-xs sm:text-sm font-medium">
                 <Clock className="w-4 h-4 text-brand-400 shrink-0" />
-                <span>Ortalama 15-30 Dk</span>
+                <span>7/24 Kesintisiz Hizmet</span>
               </div>
               <div className="flex items-center gap-2 text-slate-300 text-xs sm:text-sm font-medium">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />

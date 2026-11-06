@@ -57,8 +57,8 @@ export default function CoverageAreas() {
                     <h3 className="font-bold text-base text-white">{d.name}</h3>
                   </div>
                   <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-                    <Clock className="w-3 h-3" />
-                    {d.time}
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    {d.status || 'Nöbetçi Bölge'}
                   </span>
                 </div>
                 <p className="text-xs text-slate-400 mb-4">{d.desc}</p>

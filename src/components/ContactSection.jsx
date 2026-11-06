@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, MessageCircle, MapPin, Clock, User, Send, ShieldCheck } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, Clock, User, Send, ShieldCheck, Mail } from 'lucide-react';
 import { COMPANY_INFO, ANKARA_DISTRICTS } from '../data/constants';
 
 export default function ContactSection() {
@@ -82,6 +82,22 @@ export default function ContactSection() {
                       className="text-base font-bold text-whatsapp hover:underline"
                     >
                       Konum Gönder (0535 357 95 25)
+                    </a>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs text-slate-400 font-medium block">E-Posta Adresi</span>
+                    <a
+                      href={COMPANY_INFO.emailLink}
+                      className="text-sm font-bold text-white hover:text-brand-400 transition-colors"
+                    >
+                      {COMPANY_INFO.email}
                     </a>
                   </div>
                 </div>
@@ -222,9 +238,9 @@ export default function ContactSection() {
                     >
                       <option value="Oto Çekici İhtiyacı">Oto Çekici / Kurtarma</option>
                       <option value="Kaza Kurtarma">Kaza Yaptım / Kurtarma</option>
+                      <option value="Lüks Araç Taşıma">Lüks & Alçak Şasi Araç</option>
                       <option value="Akü Takviye">Akü Takviye (12V/24V)</option>
                       <option value="Lastik Patladı">Lastik Patladı / Yol Yardım</option>
-                      <option value="Şehirler Arası Taşıma">Şehirler Arası Araç Taşıma</option>
                       <option value="Motosiklet Taşıma">Motosiklet Taşıma</option>
                     </select>
                   </div>

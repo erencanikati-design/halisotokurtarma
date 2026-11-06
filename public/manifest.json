@@ -1,7 +1,7 @@
 {
   "name": "Halis Oto Kurtarma - Ankara 7/24 Çekici",
   "short_name": "Halis Kurtarma",
-  "description": "Ankara 7/24 Acil Oto Kurtarma & Yol Yardım Hizmeti. 15-30 dakikada yanınızdayız.",
+  "description": "Ankara 7/24 Acil Oto Kurtarma & Yol Yardım Hizmeti.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#020617",

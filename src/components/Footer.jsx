@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageCircle, MapPin, Clock, ShieldCheck, Heart } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, Clock, ShieldCheck, Heart, Mail } from 'lucide-react';
 import { COMPANY_INFO, SERVICES, ANKARA_DISTRICTS } from '../data/constants';
 
 export default function Footer() {
@@ -25,7 +25,7 @@ export default function Footer() {
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed">
-              Sincan merkezli operasyonumuzla Ankara genelinde 7/24 kaskolu oto kurtarma, çekici, akü takviye ve acil yol yardım hizmetleri sunuyoruz. 15-30 dakikada yanınızdayız.
+              Sincan merkezli operasyonumuzla Ankara genelinde 7/24 kaskolu oto kurtarma, çekici, akü takviye ve acil yol yardım hizmetleri sunuyoruz.
             </p>
 
             <div className="pt-2 flex flex-col gap-2 text-xs">
@@ -33,14 +33,18 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-brand-400 shrink-0" />
                 {COMPANY_INFO.address}
               </span>
+              <a href={COMPANY_INFO.emailLink} className="flex items-center gap-2 text-slate-300 hover:text-brand-400 transition-colors">
+                <Mail className="w-4 h-4 text-amber-400 shrink-0" />
+                {COMPANY_INFO.email}
+              </a>
               <span className="flex items-center gap-2 text-slate-300">
                 <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
                 7 Gün 24 Saat Kesintisiz Nöbetçi
               </span>
-              <span className="flex items-center gap-2 text-slate-300">
+              <a href={COMPANY_INFO.telLink} className="flex items-center gap-2 text-slate-300 hover:text-red-400 transition-colors">
                 <Phone className="w-4 h-4 text-red-400 shrink-0" />
-                0535 357 95 25
-              </span>
+                {COMPANY_INFO.phone}
+              </a>
             </div>
           </div>
 
@@ -92,7 +96,7 @@ export default function Footer() {
               </a>
             </div>
             <div className="text-[11px] text-slate-500 text-center pt-2">
-              Ortalama varış süresi 15-30 dakikadır.
+              7/24 Kesintisiz Nöbetçi Çekici Hizmeti
             </div>
           </div>
 

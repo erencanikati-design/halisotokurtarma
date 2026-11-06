@@ -49,13 +49,13 @@ const SITUATIONS = [
     msg: "Merhaba Halis Bey, yakıtım bitti ve yolda kaldım. Yol yardımı rica ediyorum."
   },
   {
-    id: "sehirlerarasi",
-    title: "Şehirler Arası Taşıma",
-    subtitle: "Ankara'dan başka şehre veya başka şehirden Ankara'ya araç sevkiyatı.",
-    icon: AlertCircle,
+    id: "luks",
+    title: "Lüks & Alçak Şasi Araç",
+    subtitle: "Spor otomobil, alçak şasili veya özel araç taşıma.",
+    icon: Car,
     color: "from-emerald-500/20 to-emerald-600/10 text-emerald-400 border-emerald-500/30",
-    actionNote: "Sigortalı ve zamanında teslimat garantili tekli/çoklu araç transferi.",
-    msg: "Merhaba Halis Bey, şehirler arası araç taşıma için fiyat ve bilgi almak istiyorum."
+    actionNote: "Sıfır eğim platform ve özel sabitleme aparatları ile hasarsız nakliye.",
+    msg: "Merhaba Halis Bey, alçak şasili / özel aracım için çekici desteği almak istiyorum."
   }
 ];
 
