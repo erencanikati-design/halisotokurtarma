@@ -1,8 +1,18 @@
-import React from 'react';
-import { Phone, MessageCircle, Clock, ShieldCheck, MapPin, Zap, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, MessageCircle, Clock, ShieldCheck, MapPin, Zap, Star, Navigation, Loader2 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/constants';
+import { sendWhatsAppWithLocation } from '../utils/whatsapp';
 
 export default function Hero() {
+  const [locLoading, setLocLoading] = useState(false);
+
+  const handleHeroWhatsApp = (e) => {
+    e.preventDefault();
+    setLocLoading(true);
+    sendWhatsAppWithLocation(COMPANY_INFO.whatsappMessage, () => {
+      setLocLoading(false);
+    });
+  };
   return (
     <section className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24">
       {/* Background radial glow effects */}
@@ -59,20 +69,31 @@ export default function Hero() {
                 </div>
               </a>
 
-              <a
-                href={COMPANY_INFO.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-black text-base shadow-xl shadow-whatsapp/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 group"
+              <button
+                type="button"
+                onClick={handleHeroWhatsApp}
+                disabled={locLoading}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-black text-base shadow-xl shadow-whatsapp/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 group cursor-pointer disabled:opacity-75"
               >
-                <div className="p-2 bg-slate-950/15 rounded-lg group-hover:scale-110 transition-transform">
-                  <MessageCircle className="w-6 h-6 fill-slate-950 text-whatsapp" />
+                <div className="p-2 bg-slate-950/15 rounded-lg group-hover:scale-110 transition-transform relative">
+                  {locLoading ? (
+                    <Loader2 className="w-6 h-6 text-slate-950 animate-spin" />
+                  ) : (
+                    <>
+                      <MessageCircle className="w-6 h-6 fill-slate-950 text-whatsapp" />
+                      <Navigation className="w-3 h-3 absolute -top-1 -right-1 text-slate-950 animate-pulse" />
+                    </>
+                  )}
                 </div>
                 <div className="text-left leading-tight">
-                  <div className="text-xs font-bold text-slate-900/80 uppercase">Tek Tıkla</div>
-                  <div className="text-base font-black">WhatsApp Konum At</div>
+                  <div className="text-xs font-bold text-slate-900/80 uppercase">
+                    {locLoading ? 'Konum Alınıyor...' : 'Tek Tıkla'}
+                  </div>
+                  <div className="text-base font-black">
+                    {locLoading ? 'WhatsApp Açılıyor...' : 'WhatsApp Konum At'}
+                  </div>
                 </div>
-              </a>
+              </button>
             </div>
 
             {/* Fast Feature Bullets */}
@@ -198,3 +219,4 @@ export default function Hero() {
     </section>
   );
 }
+

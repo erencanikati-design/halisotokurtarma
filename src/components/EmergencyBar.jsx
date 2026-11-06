@@ -1,30 +1,53 @@
-import React from 'react';
-import { Phone, MessageCircle, Navigation } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, MessageCircle, Navigation, Loader2 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/constants';
+import { sendWhatsAppWithLocation } from '../utils/whatsapp';
 
 export default function EmergencyBar() {
+  const [loading, setLoading] = useState(false);
+
+  const handleWhatsAppClick = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    sendWhatsAppWithLocation(COMPANY_INFO.whatsappMessage, (status) => {
+      setLoading(false);
+    });
+  };
+
   return (
     <aside 
       aria-label="Acil İletişim ve Konum Butonları"
       className="md:hidden fixed bottom-0 left-0 right-0 z-50 p-2.5 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800 shadow-[0_-8px_30px_rgba(0,0,0,0.7)]"
     >
       <div className="grid grid-cols-2 gap-2 max-w-lg mx-auto">
-        {/* WhatsApp Konum Gönder */}
-        <a
-          href={COMPANY_INFO.whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-whatsapp hover:bg-whatsapp-hover active:scale-95 text-slate-950 font-black text-sm shadow-lg shadow-whatsapp/30 transition-all"
+        {/* WhatsApp Konum Gönder (Akıllı GPS Entegrasyonlu) */}
+        <button
+          type="button"
+          onClick={handleWhatsAppClick}
+          disabled={loading}
+          className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-whatsapp hover:bg-whatsapp-hover active:scale-95 text-slate-950 font-black text-sm shadow-lg shadow-whatsapp/30 transition-all disabled:opacity-75"
         >
           <div className="relative">
-            <MessageCircle className="w-5 h-5 fill-slate-950" />
-            <Navigation className="w-2.5 h-2.5 absolute -top-1 -right-1 text-slate-950" />
+            {loading ? (
+              <Loader2 className="w-5 h-5 text-slate-950 animate-spin" />
+            ) : (
+              <>
+                <MessageCircle className="w-5 h-5 fill-slate-950" />
+                <Navigation className="w-2.5 h-2.5 absolute -top-1 -right-1 text-slate-950 animate-pulse" />
+              </>
+            )}
           </div>
           <span className="leading-tight text-center">
-            WhatsApp<br />
-            <span className="text-[10px] uppercase font-bold opacity-80">Konum At</span>
+            {loading ? (
+              <span className="text-xs">Konum Alınıyor...</span>
+            ) : (
+              <>
+                WhatsApp<br />
+                <span className="text-[10px] uppercase font-bold opacity-80">Konum At</span>
+              </>
+            )}
           </span>
-        </a>
+        </button>
 
         {/* Hemen Ara 7/24 */}
         <a

@@ -45,3 +45,4 @@ npm run dev
 npm run build
 ```
 Oluşan `dist/` klasöründeki dosyaları herhangi bir web sunucusuna (cPanel, Plesk, Vercel, Netlify, Cloudflare Pages vb.) yükleyebilirsiniz.
+
