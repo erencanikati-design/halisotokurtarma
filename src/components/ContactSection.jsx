@@ -18,18 +18,18 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="iletisim" className="py-20 bg-slate-900/60 border-t border-slate-800 relative">
+    <section id="iletisim" className="py-20 bg-white border-t border-slate-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-bold tracking-wider uppercase">
+          <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-extrabold tracking-wider uppercase">
             7/24 İletişim & Konum
           </span>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight mt-3">
             Bize Ulaşın, Hemen Yola Çıkalım
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg mt-3">
+          <p className="text-slate-700 font-medium text-base sm:text-lg mt-3">
             Sincan merkez üssümüzden Ankara'nın her noktasına bir telefon veya tek tıkla WhatsApp kadar yakınız.
           </p>
         </div>
@@ -39,29 +39,29 @@ export default function ContactSection() {
           {/* Contact Details (Left: 5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             
-            <div className="rounded-2xl bg-slate-900/90 border border-slate-800 p-7 space-y-6 shadow-xl">
+            <div className="rounded-2xl bg-slate-50/80 border border-slate-200/90 p-7 space-y-6 shadow-md">
               <div>
-                <span className="text-xs font-bold text-brand-400 uppercase tracking-wider block mb-1">
+                <span className="text-xs font-extrabold text-amber-700 uppercase tracking-wider block mb-1">
                   İşletme Sahibi
                 </span>
-                <div className="flex items-center gap-2 text-xl font-black text-white">
-                  <User className="w-5 h-5 text-brand-400" />
+                <div className="flex items-center gap-2 text-xl font-black text-slate-950">
+                  <User className="w-5 h-5 text-amber-600" />
                   <span>{COMPANY_INFO.owner}</span>
                 </div>
-                <p className="text-xs text-slate-400 mt-1">Halis Oto Kurtarma & Yol Yardım Hizmetleri</p>
+                <p className="text-xs font-semibold text-slate-600 mt-1">Halis Oto Kurtarma & Yol Yardım Hizmetleri</p>
               </div>
 
-              <div className="space-y-4 pt-2 border-t border-slate-800">
+              <div className="space-y-4 pt-2 border-t border-slate-200">
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-emergency-600/20 border border-emergency-500/40 flex items-center justify-center text-emergency-500 shrink-0">
+                  <div className="w-11 h-11 rounded-xl bg-red-50 border border-red-200 flex items-center justify-center text-red-600 shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 font-medium block">7/24 Acil Çağrı Telefonu</span>
+                    <span className="text-xs text-slate-600 font-bold block">7/24 Acil Çağrı Telefonu</span>
                     <a
                       href={COMPANY_INFO.telLink}
-                      className="text-lg font-black text-white hover:text-brand-400 transition-colors"
+                      className="text-lg font-black text-slate-950 hover:text-red-600 transition-colors"
                     >
                       {COMPANY_INFO.phone}
                     </a>
@@ -70,16 +70,16 @@ export default function ContactSection() {
 
                 {/* WhatsApp */}
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-whatsapp/20 border border-whatsapp/40 flex items-center justify-center text-whatsapp shrink-0">
-                    <MessageCircle className="w-5 h-5 fill-whatsapp" />
+                  <div className="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
+                    <MessageCircle className="w-5 h-5 fill-emerald-600" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 font-medium block">WhatsApp Konum & Destek Hattı</span>
+                    <span className="text-xs text-slate-600 font-bold block">WhatsApp Konum & Destek Hattı</span>
                     <a
                       href={COMPANY_INFO.whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-base font-bold text-whatsapp hover:underline"
+                      className="text-base font-extrabold text-emerald-700 hover:underline"
                     >
                       Konum Gönder (0535 357 95 25)
                     </a>
@@ -88,14 +88,14 @@ export default function ContactSection() {
 
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0">
+                  <div className="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 font-medium block">E-Posta Adresi</span>
+                    <span className="text-xs text-slate-600 font-bold block">E-Posta Adresi</span>
                     <a
                       href={COMPANY_INFO.emailLink}
-                      className="text-sm font-bold text-white hover:text-brand-400 transition-colors"
+                      className="text-sm font-extrabold text-slate-900 hover:text-amber-600 transition-colors"
                     >
                       {COMPANY_INFO.email}
                     </a>
@@ -104,12 +104,12 @@ export default function ContactSection() {
 
                 {/* Address */}
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-brand-500/20 border border-brand-500/40 flex items-center justify-center text-brand-400 shrink-0">
+                  <div className="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 font-medium block">Adres / Merkez Garaj</span>
-                    <p className="text-sm font-semibold text-slate-200">
+                    <span className="text-xs text-slate-600 font-bold block">Adres / Merkez Garaj</span>
+                    <p className="text-sm font-bold text-slate-800">
                       {COMPANY_INFO.address}
                     </p>
                   </div>
@@ -117,13 +117,13 @@ export default function ContactSection() {
 
                 {/* Hours */}
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 font-medium block">Çalışma Saatleri</span>
-                    <p className="text-sm font-bold text-emerald-400 flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span className="text-xs text-slate-600 font-bold block">Çalışma Saatleri</span>
+                    <p className="text-sm font-extrabold text-emerald-700 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                       7 Gün 24 Saat Kesintisiz Açık
                     </p>
                   </div>
@@ -136,9 +136,9 @@ export default function ContactSection() {
                   href={COMPANY_INFO.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-black text-sm shadow-lg shadow-whatsapp/20 transition-all transform active:scale-95"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-sm shadow-md shadow-whatsapp/20 transition-all transform active:scale-95"
                 >
-                  <MessageCircle className="w-5 h-5 fill-slate-950" />
+                  <MessageCircle className="w-5 h-5 fill-white text-whatsapp" />
                   <span>Tek Tıkla WhatsApp Mesajı Gönder</span>
                 </a>
               </div>
@@ -146,7 +146,7 @@ export default function ContactSection() {
             </div>
 
             {/* Google Maps Embed iframe */}
-            <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl h-64 relative bg-slate-950">
+            <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md h-64 relative bg-slate-100">
               <iframe
                 title="Halis Oto Kurtarma Sincan Ankara Harita"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12228.694665406734!2d32.5701889!3d39.9654167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d33932824ff7ab%3A0xe54d89617255928b!2sP%C4%B1narba%C5%9F%C4%B1%2C%20Vatan%20Cd.%20No%3A106%2C%2006930%20Sincan%2FAnkara!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
@@ -156,7 +156,7 @@ export default function ContactSection() {
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale contrast-125 opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="w-full h-full"
               ></iframe>
             </div>
 
@@ -164,16 +164,16 @@ export default function ContactSection() {
 
           {/* Emergency Fast Request Form (Right: 7 cols) */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl bg-slate-900/90 border border-slate-800 p-7 sm:p-10 shadow-2xl relative">
+            <div className="rounded-3xl bg-white border border-slate-200/90 p-7 sm:p-10 shadow-xl relative">
               
               <div className="mb-6">
-                <span className="text-xs font-bold text-brand-400 uppercase tracking-wider block mb-1">
+                <span className="text-xs font-extrabold text-amber-700 uppercase tracking-wider block mb-1">
                   Hızlı Talep Formu
                 </span>
-                <h3 className="text-2xl font-black text-white">
+                <h3 className="text-2xl font-black text-slate-950">
                   Acil Çekici / Fiyat Talep Edin
                 </h3>
-                <p className="text-slate-400 text-sm mt-1">
+                <p className="text-slate-700 font-medium text-sm mt-1">
                   Bilgilerinizi girin, otomatik olarak WhatsApp hattımıza yönlendirilerek anında yardım alın.
                 </p>
               </div>
@@ -181,7 +181,7 @@ export default function ContactSection() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-extrabold text-slate-800 uppercase tracking-wider mb-2">
                       Adınız Soyadınız *
                     </label>
                     <input
@@ -190,12 +190,12 @@ export default function ContactSection() {
                       placeholder="Örn: Ahmet Yılmaz"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors"
+                      className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-amber-500 transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-extrabold text-slate-800 uppercase tracking-wider mb-2">
                       Telefon Numaranız *
                     </label>
                     <input
@@ -204,20 +204,20 @@ export default function ContactSection() {
                       placeholder="Örn: 05XX XXX XX XX"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors"
+                      className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-amber-500 transition-colors"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-extrabold text-slate-800 uppercase tracking-wider mb-2">
                       Bulunduğunuz İlçe / Bölge
                     </label>
                     <select
                       value={formData.district}
                       onChange={(e) => setFormData({ ...formData, district: e.target.value })}
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors"
+                      className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 focus:outline-none focus:bg-white focus:border-amber-500 transition-colors"
                     >
                       {ANKARA_DISTRICTS.map((d) => (
                         <option key={d.name} value={d.name}>
@@ -228,13 +228,13 @@ export default function ContactSection() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-extrabold text-slate-800 uppercase tracking-wider mb-2">
                       İhtiyaç Türü
                     </label>
                     <select
                       value={formData.problem}
                       onChange={(e) => setFormData({ ...formData, problem: e.target.value })}
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors"
+                      className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 focus:outline-none focus:bg-white focus:border-amber-500 transition-colors"
                     >
                       <option value="Oto Çekici İhtiyacı">Oto Çekici / Kurtarma</option>
                       <option value="Kaza Kurtarma">Kaza Yaptım / Kurtarma</option>
@@ -247,7 +247,7 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-extrabold text-slate-800 uppercase tracking-wider mb-2">
                     Araç Marka/Model ve Ekstra Açıklama
                   </label>
                   <textarea
@@ -255,20 +255,20 @@ export default function ContactSection() {
                     placeholder="Örn: 2018 model Focus, araç çalışmıyor, Eryaman kavşağındayım..."
                     value={formData.note}
                     onChange={(e) => setFormData({ ...formData, note: e.target.value })}
-                    className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors resize-none"
+                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-amber-500 transition-colors resize-none"
                   ></textarea>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center gap-3 text-xs text-slate-400">
-                  <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3 text-xs font-medium text-slate-700">
+                  <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
                   <span>
-                    Bilgileriniz doğrudan <strong>Halis Kırtepe</strong> WhatsApp hattına iletilir. Kişisel verileriniz 3. şahıslarla asla paylaşılmaz.
+                    Bilgileriniz doğrudan <strong className="text-slate-950 font-extrabold">Halis Kırtepe</strong> WhatsApp hattına iletilir. Kişisel verileriniz 3. şahıslarla asla paylaşılmaz.
                   </span>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-gradient-to-r from-brand-500 to-amber-500 hover:from-brand-400 hover:to-amber-400 text-slate-950 font-black text-base shadow-xl shadow-brand-500/20 transition-all transform active:scale-95"
+                  className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-base shadow-lg shadow-amber-500/20 transition-all transform active:scale-95 cursor-pointer"
                 >
                   <Send className="w-5 h-5" />
                   <span>WhatsApp ile Gönder ve Çekici Çağır</span>

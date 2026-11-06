@@ -28,17 +28,17 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-slate-900/40 relative border-t border-slate-800">
+    <section className="py-20 bg-slate-50 relative border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-bold tracking-wider uppercase">
+          <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-extrabold tracking-wider uppercase">
             Kolay Süreç
           </span>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight mt-3">
             3 Kolay Adımda Yolda Kalmaktan Kurtulun
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg mt-3">
+          <p className="text-slate-700 font-medium text-base sm:text-lg mt-3">
             Yolda kaldığınızda panik yapmanıza gerek yok. Halis Oto Kurtarma yanınızda.
           </p>
         </div>
@@ -49,33 +49,33 @@ export default function HowItWorks() {
             return (
               <div
                 key={step.num}
-                className="rounded-2xl bg-slate-900/90 border border-slate-800 p-8 relative flex flex-col justify-between hover:border-brand-500/50 transition-all duration-300 group"
+                className="rounded-2xl bg-white border border-slate-200/90 p-8 relative flex flex-col justify-between shadow-sm hover:shadow-lg hover:border-amber-400 transition-all duration-300 group"
               >
                 {/* Step big number */}
-                <span className="text-6xl font-black text-slate-800/80 group-hover:text-brand-500/20 transition-colors absolute top-4 right-6 pointer-events-none">
+                <span className="text-6xl font-black text-slate-100 group-hover:text-amber-500/15 transition-colors absolute top-4 right-6 pointer-events-none">
                   {step.num}
                 </span>
 
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400 mb-6 group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-slate-950 transition-all">
+                  <div className="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
                     <Icon className="w-7 h-7" />
                   </div>
 
-                  <span className="inline-block text-xs font-bold text-brand-400 tracking-wider uppercase mb-2">
+                  <span className="inline-block text-xs font-extrabold text-amber-700 tracking-wider uppercase mb-2">
                     {step.badge}
                   </span>
 
-                  <h3 className="text-xl font-bold text-white mb-3">
+                  <h3 className="text-xl font-extrabold text-slate-950 mb-3">
                     {step.title}
                   </h3>
 
-                  <p className="text-slate-400 text-sm leading-relaxed">
+                  <p className="text-slate-700 font-medium text-sm leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-slate-800/80">
-                  <span className="text-xs font-semibold text-slate-400 flex items-center gap-1 group-hover:text-brand-400 transition-colors">
+                <div className="mt-8 pt-4 border-t border-slate-100">
+                  <span className="text-xs font-bold text-slate-700 flex items-center gap-1 group-hover:text-amber-700 transition-colors">
                     Halis Kırtepe Güvencesiyle <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>

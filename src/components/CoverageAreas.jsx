@@ -11,19 +11,19 @@ export default function CoverageAreas() {
   );
 
   return (
-    <section id="bolgeler" className="py-20 relative">
+    <section id="bolgeler" className="py-20 bg-white border-t border-slate-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-bold tracking-wider uppercase">
+          <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-extrabold tracking-wider uppercase">
             Hizmet Ağımız
           </span>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mt-3">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight mt-3">
             Ankara'nın Tüm İlçelerinde Yanınızdayız
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg mt-3">
-            Merkez üssümüz <strong>Sincan</strong> başta olmak üzere, Ankara'nın 25 ilçesine, çevre yollarına ve otoyollara anında nöbetçi çekici yönlendiriyoruz.
+          <p className="text-slate-700 font-medium text-base sm:text-lg mt-3">
+            Merkez üssümüz <strong className="text-slate-950 font-extrabold">Sincan</strong> başta olmak üzere, Ankara'nın 25 ilçesine, çevre yollarına ve otoyollara anında nöbetçi çekici yönlendiriyoruz.
           </p>
 
           {/* Search Box */}
@@ -34,7 +34,7 @@ export default function CoverageAreas() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="İlçenizi arayın (Örn: Sincan, Etimesgut, Batıkent...)"
-              className="w-full bg-slate-900 border border-slate-700/80 rounded-2xl pl-12 pr-4 py-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 shadow-inner"
+              className="w-full bg-slate-50 border border-slate-300 rounded-2xl pl-12 pr-4 py-3.5 text-sm font-semibold text-slate-900 placeholder-slate-500 focus:outline-none focus:bg-white focus:border-amber-500 shadow-sm transition-colors"
             />
           </div>
         </div>
@@ -44,40 +44,40 @@ export default function CoverageAreas() {
           {filteredDistricts.map((d) => (
             <div
               key={d.name}
-              className={`p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${
+              className={`p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md ${
                 d.central
-                  ? 'bg-slate-900/90 border-slate-800 hover:border-brand-500/50'
-                  : 'bg-slate-950/60 border-slate-800/80 hover:border-slate-700'
+                  ? 'bg-white border-slate-200/90 hover:border-amber-400'
+                  : 'bg-slate-50/70 border-slate-200/80 hover:bg-white hover:border-slate-300'
               }`}
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <MapPin className={`w-4 h-4 ${d.central ? 'text-brand-400' : 'text-slate-500'}`} />
-                    <h3 className="font-bold text-base text-white">{d.name}</h3>
+                    <MapPin className={`w-4 h-4 ${d.central ? 'text-amber-600' : 'text-slate-500'}`} />
+                    <h3 className="font-extrabold text-base text-slate-950">{d.name}</h3>
                   </div>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                     {d.status || 'Nöbetçi Bölge'}
                   </span>
                 </div>
-                <p className="text-xs text-slate-400 mb-4">{d.desc}</p>
+                <p className="text-xs font-medium text-slate-700 mb-4 leading-relaxed">{d.desc}</p>
               </div>
 
-              <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
                 <a
                   href={`https://wa.me/${COMPANY_INFO.rawPhone}?text=${encodeURIComponent(`Merhaba Halis Bey, ${d.name} bölgesindeyim. Çekiciye ihtiyacım var yardımcı olur musunuz?`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-semibold text-whatsapp hover:underline flex items-center gap-1"
+                  className="text-xs font-bold text-emerald-700 hover:text-emerald-800 hover:underline flex items-center gap-1"
                 >
-                  <MessageCircle className="w-3.5 h-3.5 fill-whatsapp" />
+                  <MessageCircle className="w-3.5 h-3.5 fill-emerald-600 text-emerald-600" />
                   Konum At
                 </a>
 
                 <a
                   href={COMPANY_INFO.telLink}
-                  className="text-xs font-semibold text-slate-300 hover:text-brand-400 flex items-center gap-1"
+                  className="text-xs font-bold text-slate-800 hover:text-red-600 flex items-center gap-1 transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   Hemen Ara
@@ -89,9 +89,9 @@ export default function CoverageAreas() {
 
         {/* Not in list note */}
         <div className="mt-10 text-center">
-          <p className="text-sm text-slate-400">
+          <p className="text-sm font-medium text-slate-700">
             Aradığınız bölgeyi göremediniz mi? Hiç sorun değil! Ankara çevre otoyolları ve tüm köyler dahil 
-            <a href={COMPANY_INFO.telLink} className="text-brand-400 font-bold ml-1 hover:underline">
+            <a href={COMPANY_INFO.telLink} className="text-amber-700 font-extrabold ml-1 hover:underline">
               0535 357 95 25
             </a> numaralı hattımızdan 7/24 çekici çağırabilirsiniz.
           </p>

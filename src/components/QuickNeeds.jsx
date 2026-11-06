@@ -8,7 +8,7 @@ const SITUATIONS = [
     title: "Aracım Arızalandı",
     subtitle: "Motor, şanzıman veya mekanik arıza nedeniyle araç yolda kaldı.",
     icon: Car,
-    color: "from-amber-500/20 to-amber-600/10 text-amber-400 border-amber-500/30",
+    color: "bg-amber-50 text-amber-600 border-amber-200",
     actionNote: "En yakın nöbetçi çekici ekibimizi hemen yönlendirelim.",
     msg: "Merhaba Halis Bey, aracım arızalandı ve yolda kaldım. Çekiciye ihtiyacım var yardımcı olur musunuz?"
   },
@@ -17,7 +17,7 @@ const SITUATIONS = [
     title: "Kaza Yaptım",
     subtitle: "Maddi hasarlı veya yürümeyen kaza yapmış araç kurtarma.",
     icon: ShieldAlert,
-    color: "from-red-500/20 to-red-600/10 text-red-400 border-red-500/30",
+    color: "bg-red-50 text-red-600 border-red-200",
     actionNote: "Kaskolu çekici ve gerekiyorsa vinç desteğiyle güvenli kurtarma.",
     msg: "Merhaba Halis Bey, kaza yaptık, çekiciye ihtiyacımız var yardımcı olur musunuz?"
   },
@@ -26,7 +26,7 @@ const SITUATIONS = [
     title: "Akü Bitti / Marş Basmıyor",
     subtitle: "Farlar açık kaldı veya akü ömrü bitti, araç marş almıyor.",
     icon: BatteryCharging,
-    color: "from-blue-500/20 to-blue-600/10 text-blue-400 border-blue-500/30",
+    color: "bg-blue-50 text-blue-600 border-blue-200",
     actionNote: "12V / 24V profesyonel akü takviye cihazı ile yerinde çözüm.",
     msg: "Merhaba Halis Bey, aküm bitti, marş basmıyor. Yol yardım desteği rica ediyorum."
   },
@@ -35,7 +35,7 @@ const SITUATIONS = [
     title: "Lastik Patladı / Stepne Yok",
     subtitle: "Lastik yarıldı veya patladı, bijon açılmıyor ya da stepne bulunmuyor.",
     icon: Disc,
-    color: "from-orange-500/20 to-orange-600/10 text-orange-400 border-orange-500/30",
+    color: "bg-orange-50 text-orange-600 border-orange-200",
     actionNote: "Yerinde lastik değişimi veya en yakın oto lastikçiye güvenli nakil.",
     msg: "Merhaba Halis Bey, lastiğim patladı yolda kaldım, çekiciye ihtiyacım var."
   },
@@ -44,18 +44,18 @@ const SITUATIONS = [
     title: "Yakıtım Bitti",
     subtitle: "Gösterge yanıltıcı oldu, benzin veya mazot tükendi.",
     icon: Fuel,
-    color: "from-purple-500/20 to-purple-600/10 text-purple-400 border-purple-500/30",
+    color: "bg-purple-50 text-purple-600 border-purple-200",
     actionNote: "Aracınıza uygun sertifikalı bidonla acil yakıt ulaştırma.",
     msg: "Merhaba Halis Bey, yakıtım bitti ve yolda kaldım. Yol yardımı rica ediyorum."
   },
   {
     id: "luks",
-    title: "Lüks & Alçak Şasi Araç",
-    subtitle: "Spor otomobil, alçak şasili veya özel araç taşıma.",
+    title: "Hasarsız Araç Taşıma",
+    subtitle: "Binek, SUV veya özel araç taşıma.",
     icon: Car,
-    color: "from-emerald-500/20 to-emerald-600/10 text-emerald-400 border-emerald-500/30",
-    actionNote: "Sıfır eğim platform ve özel sabitleme aparatları ile hasarsız nakliye.",
-    msg: "Merhaba Halis Bey, alçak şasili / özel aracım için çekici desteği almak istiyorum."
+    color: "bg-emerald-50 text-emerald-600 border-emerald-200",
+    actionNote: "Özel çeki ve sabitleme aparatları ile hasarsız nakliye.",
+    msg: "Merhaba Halis Bey, aracım için çekici desteği almak istiyorum."
   }
 ];
 
@@ -63,18 +63,18 @@ export default function QuickNeeds() {
   const [selected, setSelected] = useState(SITUATIONS[0]);
 
   return (
-    <section className="py-12 bg-slate-900/50 border-y border-slate-800/80">
+    <section className="py-14 bg-slate-50 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-brand-400 text-xs font-bold tracking-wide uppercase mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-extrabold tracking-wide uppercase mb-2">
             Hızlı Çözüm Merkezi
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
             Şu Anki Durumunuz Nedir?
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base mt-2">
-            Aşağıdan yaşadığınız arıza veya ihtiyacı seçin, size en uygun müdahale ekibini hemen yönlendirelim.
+          <p className="text-slate-700 font-medium text-sm sm:text-base mt-2">
+            Aşağıdan yaşadığınız ihtiyacı seçin, size en uygun müdahale ekibini hemen yönlendirelim.
           </p>
         </div>
 
@@ -87,18 +87,18 @@ export default function QuickNeeds() {
               <button
                 key={item.id}
                 onClick={() => setSelected(item)}
-                className={`p-4 rounded-xl border text-left transition-all flex flex-col justify-between ${
+                className={`p-4 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
                   isCurrent
-                    ? 'bg-slate-800 border-brand-500 shadow-lg shadow-brand-500/10 -translate-y-1'
-                    : 'bg-slate-900/80 border-slate-800 hover:border-slate-700 hover:bg-slate-800/60'
+                    ? 'bg-white border-amber-500 shadow-md shadow-amber-500/10 -translate-y-0.5 ring-2 ring-amber-500/20'
+                    : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-sm'
                 }`}
               >
-                <div className={`w-10 h-10 rounded-lg bg-gradient-to-br flex items-center justify-center mb-3 border ${item.color}`}>
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 border ${item.color}`}>
                   <Icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-white leading-snug">{item.title}</h3>
-                  <span className={`text-[11px] font-medium block mt-1 ${isCurrent ? 'text-brand-400' : 'text-slate-400'}`}>
+                  <h3 className="text-sm font-extrabold text-slate-950 leading-snug">{item.title}</h3>
+                  <span className={`text-xs font-bold block mt-1.5 ${isCurrent ? 'text-amber-700' : 'text-slate-600'}`}>
                     {isCurrent ? 'Seçildi ✓' : 'Detay gör →'}
                   </span>
                 </div>
@@ -108,26 +108,26 @@ export default function QuickNeeds() {
         </div>
 
         {/* Selected Situation Action Box */}
-        <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-950 border border-brand-500/30 shadow-xl">
+        <div className="mt-8 p-6 sm:p-7 rounded-2xl bg-white border border-amber-200/80 shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             
-            <div className="space-y-2 text-center md:text-left">
-              <div className="inline-flex items-center gap-2 text-xs font-bold text-brand-400 uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-brand-500"></span>
+            <div className="space-y-1.5 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 text-xs font-extrabold text-amber-700 uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-amber-500"></span>
                 {selected.title} İçin Özel Çözüm
               </div>
-              <p className="text-lg font-bold text-white">
+              <p className="text-base sm:text-lg font-extrabold text-slate-950">
                 {selected.subtitle}
               </p>
-              <p className="text-sm text-slate-300">
+              <p className="text-sm font-medium text-slate-700">
                 {selected.actionNote}
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
               <a
                 href={COMPANY_INFO.telLink}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emergency-600 hover:bg-emergency-500 text-white font-bold text-sm shadow-lg transition-transform active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-sm transition-transform active:scale-95"
               >
                 <Phone className="w-4 h-4" />
                 <span>Hemen Ara: {COMPANY_INFO.phone}</span>
@@ -137,9 +137,9 @@ export default function QuickNeeds() {
                 href={`https://wa.me/${COMPANY_INFO.rawPhone}?text=${encodeURIComponent(selected.msg)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-bold text-sm shadow-md transition-transform active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-sm shadow-sm transition-transform active:scale-95"
               >
-                <MessageCircle className="w-4 h-4 fill-slate-950 text-whatsapp" />
+                <MessageCircle className="w-4 h-4 fill-white text-whatsapp" />
                 <span>WhatsApp İle Bildir</span>
               </a>
             </div>
@@ -151,4 +151,3 @@ export default function QuickNeeds() {
     </section>
   );
 }
-
