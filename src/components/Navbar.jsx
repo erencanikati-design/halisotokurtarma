@@ -19,7 +19,7 @@ export default function Navbar() {
     { name: 'Foto Galeri', href: '#galeri' },
     { name: 'Neden Biz?', href: '#neden-biz' },
     { name: 'Hizmet Bölgeleri', href: '#bolgeler' },
-    { name: 'Fiyat Hesapla', href: '#hesapla' },
+    { name: 'Fiyat & Teklif', href: '#hesapla' },
     { name: 'Yorumlar', href: '#yorumlar' },
     { name: 'SSS', href: '#sss' },
     { name: 'İletişim', href: '#iletisim' },

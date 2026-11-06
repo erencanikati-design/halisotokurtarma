@@ -10,8 +10,8 @@ Ankara genelinde 7/24 oto kurtarma, çekici ve acil yol yardım hizmeti sunan **
    - **Mobilde Sabit Alt Bar (Sticky Bar):** Ekranın alt kısmında her zaman parmak ucunda duran, tek tıkla arama (`tel:05353579525`) ve doğrudan önceden tanımlanmış mesajla açılan WhatsApp (`ÇEKİCİYE İHTİYACIM VAR YARDIMCI OLUR MUSUNUZ?`) butonları.
 2. **Hızlı Durum / Arıza Seçici:**
    - Aracım Arızalandı, Kaza Yaptım, Akü Bitti, Lastik Patladı, Yakıtım Bitti veya Şehirler Arası Taşıma gibi durumlarda tek tıkla uygun ekibe bağlanma.
-3. **İnteraktif Fiyat & Mesafe Hesaplama Aracı:**
-   - Araç türü (Binek, SUV, Ticari, Motosiklet), kalkış ve varış ilçesi, tekerlek kilitli / hasarlı durumlarına göre anlık tahmini fiyat hesaplama ve direkt WhatsApp teklifi alma.
+3. **Hızlı Fiyat & Çekici Teklifi Alma:**
+   - Araç türü (Binek, SUV, Ticari, Motosiklet), kalkış ve varış ilçesi, tekerlek kilitli / hasarlı durumlarına göre anında WhatsApp ve telefon üzerinden net fiyat teklifi isteme.
 4. **Ankara'nın 25 İlçesine Özel Bölge Rehberi:**
    - Sincan, Etimesgut, Yenimahalle, Çankaya, Keçiören vb. tüm ilçeler için arama ve tahmini varış süresi (10-30 dk).
 5. **Güven & Kasko Vurgusu:**
