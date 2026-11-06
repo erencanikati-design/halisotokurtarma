@@ -66,13 +66,13 @@ export default function CoverageAreas() {
 
               <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
                 <a
-                  href={`https://wa.me/${COMPANY_INFO.rawPhone}?text=${encodeURIComponent(`Merhaba Halis Bey, ${d.name} bölgesindeyim. Çekiciye ihtiyacım var yardımcı olur musunuz?`)}`}
+                  href={`https://wa.me/905353579525?text=${encodeURIComponent(`Merhaba Halis Bey çekiciye ihtiyacım var ve ${d.name} bölgesindeyim yardımcı olur musunuz?`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-bold text-emerald-700 hover:text-emerald-800 hover:underline flex items-center gap-1"
+                  className="text-xs font-bold text-emerald-700 hover:text-emerald-800 hover:underline flex items-center gap-1.5"
                 >
                   <MessageCircle className="w-3.5 h-3.5 fill-emerald-600 text-emerald-600" />
-                  Konum At
+                  <span>Mesaj Gönder</span>
                 </a>
 
                 <a
@@ -80,7 +80,7 @@ export default function CoverageAreas() {
                   className="text-xs font-bold text-slate-800 hover:text-red-600 flex items-center gap-1 transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  Hemen Ara
+                  <span>Hemen Ara</span>
                 </a>
               </div>
             </div>
