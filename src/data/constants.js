@@ -9,17 +9,106 @@ export const COMPANY_INFO = {
   get whatsappLink() {
     return `https://wa.me/905353579525?text=${encodeURIComponent(this.whatsappMessage)}`;
   },
+  logoUrl: "/logo/logo.png",
   operatingHours: "7 Gün 24 Saat Kesintisiz",
   coverageArea: "Ankara'nın Tüm İlçeleri & Çevre Otoyollar",
   responseTime: "15 - 30 Dakika",
   experienceYears: "10+",
 };
 
+export const GALLERY_IMAGES = [
+  {
+    id: 1,
+    src: "/images/arac-1.jpeg",
+    title: "Sincan 7/24 Acil Kurtarma",
+    category: "Oto Çekici",
+    desc: "Kayar kasa hidrolik platform ile hasarsız yükleme"
+  },
+  {
+    id: 2,
+    src: "/images/arac-2.jpeg",
+    title: "Eskişehir Yolu Araç Transferi",
+    category: "Taşıma",
+    desc: "Güvenli ve sigortalı şehirler arası sevkiyat"
+  },
+  {
+    id: 3,
+    src: "/images/arac-3.jpeg",
+    title: "Kaza & Şarampol Müdahalesi",
+    category: "Kurtarma",
+    desc: "Özel vinç ve çeki ekipmanıyla kaza yeri müdahalesi"
+  },
+  {
+    id: 4,
+    src: "/images/arac-4.jpeg",
+    title: "Lüks & Alçak Şasi Araç Çekimi",
+    category: "Özel Taşıma",
+    desc: "Sıfır tampon teması garantili profesyonel platform"
+  },
+  {
+    id: 5,
+    src: "/images/arac-5.jpeg",
+    title: "Etimesgut Gece Nöbetçi Çekici",
+    category: "7/24 Acil",
+    desc: "Gece saatlerinde 15 dakikada yerinde destek"
+  },
+  {
+    id: 6,
+    src: "/images/arac-6.jpeg",
+    title: "Batıkent Yol Yardım & Çekici",
+    category: "Oto Çekici",
+    desc: "Arızalı aracın yetkili servise güvenli nakliyesi"
+  },
+  {
+    id: 7,
+    src: "/images/arac-7.jpeg",
+    title: "Otoyol & Çevre Yolu Kurtarma",
+    category: "Kurtarma",
+    desc: "Kuzey Marmara ve çevre otoyolu acil müdahale"
+  },
+  {
+    id: 8,
+    src: "/images/arac-8.jpeg",
+    title: "Hafif Ticari Araç Çekimi",
+    category: "Ticari",
+    desc: "Yüksek tonajlı panelvan ve kamyonet nakliyesi"
+  },
+  {
+    id: 9,
+    src: "/images/arac-9.jpeg",
+    title: "Çankaya Çoklu Araç Sevkiyatı",
+    category: "Taşıma",
+    desc: "Şehir içi ve şehirler arası araç nakli"
+  },
+  {
+    id: 10,
+    src: "/images/arac-10.jpeg",
+    title: "Yerinde Akü & Lastik Desteği",
+    category: "Yol Yardım",
+    desc: "Hızlı yol yardım ve takviye servisi"
+  },
+  {
+    id: 11,
+    src: "/images/arac-11.jpeg",
+    title: "Modern Kayar Kasa Filomuz",
+    category: "Filo",
+    desc: "Son teknoloji hidrolik donanımlı kurtarıcı araçlar"
+  },
+  {
+    id: 12,
+    src: "/images/arac-12.jpeg",
+    title: "Hasarsız Araç Yükleme",
+    category: "Oto Çekici",
+    desc: "Tekerlek sabitleme aparatları ile %100 güvenlik"
+  }
+];
+
 export const SERVICES = [
   {
     id: "oto-cekici",
     title: "Oto Çekici & Kurtarma",
     desc: "Binek, SUV, hafif ticari ve elektrikli araçlarınız için son teknoloji hidrolik kayar kasa çekicilerimizle güvenli taşıma.",
+    image: "/images/arac-1.jpeg",
     icon: "Truck",
     tag: "En Çok Tercih Edilen",
     features: ["Kayar Kasa Platform", "Kaskolu & Sigortalı Taşıma", "Hasarsız Yükleme Garantisi"]
@@ -28,6 +117,7 @@ export const SERVICES = [
     id: "acil-yol-yardim",
     title: "7/24 Acil Yol Yardım",
     desc: "Yolda kaldığınızda profesyonel ekibimiz hemen yanınızda. Hızlı yerinde müdahale ile yolunuza devam edin.",
+    image: "/images/arac-5.jpeg",
     icon: "Wrench",
     tag: "7/24 Aktif",
     features: ["Akü Takviye & Değişimi", "Lastik Değişimi & Tamiri", "Acil Yakıt Takviyesi"]
@@ -36,6 +126,7 @@ export const SERVICES = [
     id: "kazali-arac",
     title: "Kaza & Şarampol Kurtarma",
     desc: "Kaza yapmış, şarampole yuvarlanmış veya hareket kabiliyetini yitirmiş araçlar için vinçli özel kurtarma desteği.",
+    image: "/images/arac-3.jpeg",
     icon: "AlertTriangle",
     tag: "Ağır Kurtarma",
     features: ["Güçlü Vinç Desteği", "Kaza Yeri Güvenliği", "Tutanak & Çekim Desteği"]
@@ -44,6 +135,7 @@ export const SERVICES = [
     id: "coklu-tasima",
     title: "Şehirler Arası Araç Taşıma",
     desc: "Ankara'dan Türkiye'nin her yerine, veya diğer şehirlerden Ankara'ya tekli ve çoklu güvenli araç nakliyesi.",
+    image: "/images/arac-2.jpeg",
     icon: "Navigation",
     tag: "Tüm Türkiye",
     features: ["Şehirler Arası Sabit Fiyat", "Zamanında Teslimat", "Tam Kapsamlı Taşıma Kaskosu"]
@@ -52,6 +144,7 @@ export const SERVICES = [
     id: "motosiklet",
     title: "Motosiklet Taşıma",
     desc: "Özel sabitleme aparatları ve rampalı sistemlerimizle motosikletinizi tek bir çizik dahi olmadan dilediğiniz yere taşıyoruz.",
+    image: "/images/arac-4.jpeg",
     icon: "Bike",
     tag: "Özel Donanım",
     features: ["Özel Kilit Aparatları", "Düşme / Devrilme Önleyici", "Kapalı / Açık Seçenek"]
@@ -60,6 +153,7 @@ export const SERVICES = [
     id: "ticari-arac",
     title: "Hafif Ticari & Minibüs",
     desc: "Panelvan, kamyonet, minibüs ve uzun şasi ticari araçlarınız için yüksek tonaj kapasiteli özel çekici filosu.",
+    image: "/images/arac-8.jpeg",
     icon: "ShieldAlert",
     tag: "Yüksek Kapasite",
     features: ["5 Ton Taşıma Kapasitesi", "Geniş Platform", "İş Kaybını Önleyen Hız"]
@@ -143,7 +237,7 @@ export const FAQS = [
   },
   {
     q: "WhatsApp üzerinden nasıl konum gönderebilirim?",
-    a: "Sitemizdeki yeşil 'WhatsApp ile Konum Gönder' butonuna tıkladığınızda doğrudan Halis Kırtepe'nin WhatsApp hattına bağlanırsınız. Sohbet ekranındaki ataş/artı simgesinden 'Konum' -> 'Şu Anki Konumumu Paylaş' diyerek 2 saniyede konum iletebilirsiniz."
+    a: "Sitemizdeki yeşil 'WhatsApp ile Konum Gönder' butonuna tıkladığınızda doğrudan Halis Kırtepe'nin WhatsApp hattına bağlanırsınız. Canlı konum paylaşımıyla tek tıkla konumunuzu iletebilirsiniz."
   }
 ];
 
@@ -179,4 +273,3 @@ export const WHY_CHOOSE_US = [
     icon: "Award"
   }
 ];
-

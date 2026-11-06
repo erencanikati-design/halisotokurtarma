@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import EmergencyBar from './components/EmergencyBar';
 import QuickNeeds from './components/QuickNeeds';
 import Services from './components/Services';
+import Gallery from './components/Gallery';
 import WhyUs from './components/WhyUs';
 import Calculator from './components/Calculator';
 import CoverageAreas from './components/CoverageAreas';
@@ -24,6 +25,7 @@ export default function App() {
         <Hero />
         <QuickNeeds />
         <Services />
+        <Gallery />
         <WhyUs />
         <Calculator />
         <CoverageAreas />

@@ -40,67 +40,77 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Services Grid */}
+        {/* Services Grid with Real Photos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((srv) => {
             const Icon = ICON_MAP[srv.icon] || Truck;
             return (
               <div
                 key={srv.id}
-                className="rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-brand-500/50 p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 group relative overflow-hidden"
+                className="rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-brand-500/50 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 group relative overflow-hidden"
               >
-                {/* Subtle top accent gradient */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Real Photo Header */}
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-950">
+                  <img
+                    src={srv.image}
+                    alt={srv.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+                  
+                  {/* Floating Tag */}
+                  <span className="absolute top-3 right-3 text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-brand-400 border border-brand-500/30">
+                    {srv.tag}
+                  </span>
 
-                <div>
-                  {/* Tag and Icon row */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700/80 flex items-center justify-center text-brand-400 group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-slate-950 transition-all duration-300 shadow-md">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
-                      {srv.tag}
-                    </span>
-                  </div>
-
-                  {/* Title & Desc */}
-                  <h3 className="text-xl font-bold text-white group-hover:text-brand-300 transition-colors mb-3">
-                    {srv.title}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                    {srv.desc}
-                  </p>
-
-                  {/* Features list */}
-                  <div className="space-y-2 mb-6 border-t border-slate-800/80 pt-4">
-                    {srv.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-brand-400 shrink-0" />
-                        <span>{feat}</span>
-                      </div>
-                    ))}
+                  {/* Icon badge floating on edge */}
+                  <div className="absolute -bottom-4 left-6 w-11 h-11 rounded-xl bg-brand-500 text-slate-950 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <Icon className="w-5 h-5" />
                   </div>
                 </div>
 
-                {/* Card Action Buttons */}
-                <div className="pt-4 border-t border-slate-800 flex items-center gap-2">
-                  <a
-                    href={COMPANY_INFO.telLink}
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-emergency-600 hover:text-white text-slate-200 text-xs font-bold transition-all"
-                  >
-                    <Phone className="w-3.5 h-3.5" />
-                    <span>Ara</span>
-                  </a>
+                <div className="p-6 pt-7 flex flex-col flex-grow justify-between">
+                  <div>
+                    {/* Title & Desc */}
+                    <h3 className="text-xl font-bold text-white group-hover:text-brand-300 transition-colors mb-2.5">
+                      {srv.title}
+                    </h3>
+                    <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-5">
+                      {srv.desc}
+                    </p>
 
-                  <a
-                    href={`https://wa.me/${COMPANY_INFO.rawPhone}?text=${encodeURIComponent(`${srv.title} hizmeti hakkında bilgi ve çekici talep etmek istiyorum.`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-whatsapp/15 hover:bg-whatsapp text-whatsapp hover:text-slate-950 text-xs font-bold transition-all border border-whatsapp/30"
-                  >
-                    <MessageCircle className="w-3.5 h-3.5" />
-                    <span>WhatsApp</span>
-                  </a>
+                    {/* Features list */}
+                    <div className="space-y-2 mb-6 border-t border-slate-800/80 pt-4">
+                      {srv.features.map((feat, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                          <CheckCircle2 className="w-4 h-4 text-brand-400 shrink-0" />
+                          <span>{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Card Action Buttons */}
+                  <div className="pt-4 border-t border-slate-800 flex items-center gap-2">
+                    <a
+                      href={COMPANY_INFO.telLink}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-emergency-600 hover:text-white text-slate-200 text-xs font-bold transition-all"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>Ara</span>
+                    </a>
+
+                    <a
+                      href={`https://wa.me/${COMPANY_INFO.rawPhone}?text=${encodeURIComponent(`${srv.title} hizmeti hakkında bilgi ve çekici talep etmek istiyorum.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-whatsapp/15 hover:bg-whatsapp text-whatsapp hover:text-slate-950 text-xs font-bold transition-all border border-whatsapp/30"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" />
+                      <span>WhatsApp</span>
+                    </a>
+                  </div>
                 </div>
 
               </div>
@@ -127,4 +137,3 @@ export default function Services() {
     </section>
   );
 }
-

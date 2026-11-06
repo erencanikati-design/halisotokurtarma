@@ -16,6 +16,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Hizmetlerimiz', href: '#hizmetler' },
+    { name: 'Foto Galeri', href: '#galeri' },
     { name: 'Neden Biz?', href: '#neden-biz' },
     { name: 'Hizmet Bölgeleri', href: '#bolgeler' },
     { name: 'Fiyat Hesapla', href: '#hesapla' },
@@ -59,10 +60,21 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             {/* Brand Logo */}
             <a href="#" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500 to-amber-600 flex items-center justify-center text-slate-950 shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
-                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                  <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2a2 2 0 0 0 4 0h6a2 2 0 0 0 4 0h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14M7 18a1 1 0 1 1 0-2 1 1 0 0 1 0 2m10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+              <div className="relative">
+                <img
+                  src={COMPANY_INFO.logoUrl}
+                  alt="Halis Oto Kurtarma Logo"
+                  className="h-12 sm:h-14 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextElementSibling) {
+                      e.currentTarget.nextElementSibling.style.display = 'flex';
+                    }
+                  }}
+                />
+                <div style={{ display: 'none' }} className="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500 to-amber-600 items-center justify-center text-slate-950 shadow-lg">
+                  <span className="font-black text-lg">H</span>
+                </div>
               </div>
               <div className="flex flex-col">
                 <span className="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-brand-400 transition-colors">

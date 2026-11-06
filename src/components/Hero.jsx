@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
-import { Phone, MessageCircle, Clock, ShieldCheck, MapPin, Zap, Star, Navigation, Loader2 } from 'lucide-react';
+import { Phone, MessageCircle, Clock, ShieldCheck, MapPin, Zap, Star, Navigation, Loader2, ChevronRight } from 'lucide-react';
 import { COMPANY_INFO } from '../data/constants';
 import { sendWhatsAppWithLocation } from '../utils/whatsapp';
 
+const HERO_IMAGES = [
+  { src: '/images/arac-1.jpeg', tag: 'Sincan Nöbetçi Çekici' },
+  { src: '/images/arac-2.jpeg', tag: 'Şehirler Arası Taşıma' },
+  { src: '/images/arac-3.jpeg', tag: 'Kaza & Vinçli Kurtarma' },
+  { src: '/images/arac-5.jpeg', tag: 'Gece 7/24 Yol Yardım' },
+];
+
 export default function Hero() {
   const [locLoading, setLocLoading] = useState(false);
+  const [activeImgIndex, setActiveImgIndex] = useState(0);
 
   const handleHeroWhatsApp = (e) => {
     e.preventDefault();
@@ -13,6 +21,7 @@ export default function Hero() {
       setLocLoading(false);
     });
   };
+
   return (
     <section className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24">
       {/* Background radial glow effects */}
@@ -51,14 +60,14 @@ export default function Hero() {
 
             {/* Description */}
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Sincan merkezli ekibimizle <strong className="text-white font-semibold">Ankara’nın tüm ilçelerine</strong> en hızlı, kaskolu ve sigortalı oto çekici ve acil yol yardım hizmeti sunuyoruz. Güvenli taşıma, uygun ve şeffaf fiyat garantisi.
+              Sincan merkezli ekibimiz ve kendi özel kurtarma filomuzla <strong className="text-white font-semibold">Ankara’nın tüm ilçelerine</strong> en hızlı, %100 kaskolu ve sigortalı oto çekici ve yol yardım hizmeti veriyoruz.
             </p>
 
             {/* Key Emergency Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
               <a
                 href={COMPANY_INFO.telLink}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-emergency-600 via-red-600 to-rose-600 hover:from-emergency-500 hover:to-rose-500 text-white font-black text-lg shadow-xl shadow-emergency-600/35 transition-all transform hover:-translate-y-0.5 active:translate-y-0 beacon-red group"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-emergency-600 via-red-600 to-rose-600 hover:from-emergency-500 hover:to-rose-500 text-white font-black text-lg shadow-xl shadow-emergency-600/35 transition-all transform hover:-translate-y-0.5 active:translate-y-0 beacon-red group cursor-pointer"
               >
                 <div className="p-2 bg-white/20 rounded-lg group-hover:scale-110 transition-transform">
                   <Phone className="w-6 h-6 animate-pulse" />
@@ -114,85 +123,89 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Column: Hero Visual & Live Emergency Dispatch Card */}
+          {/* Right Column: Hero Real Fleet Showcase & Live Dispatch Card */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              {/* Main Card with Glassmorphism */}
-              <div className="rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950/95 border border-slate-800 p-6 sm:p-7 shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl pointer-events-none" />
+              {/* Main Card with Real Recovery Vehicle Photo */}
+              <div className="rounded-2xl bg-gradient-to-b from-slate-900/95 to-slate-950 border border-slate-800 p-4 sm:p-5 shadow-2xl relative overflow-hidden">
+                
+                {/* Photo Header Showcase */}
+                <div className="relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-950 border border-slate-800 group">
+                  <img
+                    src={HERO_IMAGES[activeImgIndex].src}
+                    alt={HERO_IMAGES[activeImgIndex].tag}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
 
-                {/* Status Header */}
-                <div className="flex items-center justify-between pb-5 border-b border-slate-800">
+                  {/* Top Status Tags */}
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                    <span className="px-2.5 py-1 rounded-lg bg-slate-950/80 backdrop-blur-md text-emerald-400 text-xs font-bold border border-emerald-500/30 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                      Canlı Görevde
+                    </span>
+                    <span className="px-2.5 py-1 rounded-lg bg-brand-500 text-slate-950 text-xs font-black shadow-md">
+                      7/24 AKTİF
+                    </span>
+                  </div>
+
+                  {/* Bottom Image Tag */}
+                  <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
+                    <div>
+                      <span className="text-[11px] font-semibold text-brand-400 uppercase tracking-wider block">
+                        Gerçek Filomuzdan
+                      </span>
+                      <h3 className="text-base font-black text-white drop-shadow">
+                        {HERO_IMAGES[activeImgIndex].tag}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Thumbnails to switch hero vehicle */}
+                <div className="grid grid-cols-4 gap-2 mt-3">
+                  {HERO_IMAGES.map((img, idx) => (
+                    <button
+                      type="button"
+                      key={idx}
+                      onClick={() => setActiveImgIndex(idx)}
+                      className={`relative rounded-lg overflow-hidden aspect-[4/3] border transition-all ${
+                        activeImgIndex === idx
+                          ? 'border-brand-500 ring-2 ring-brand-500/40 scale-105'
+                          : 'border-slate-800 opacity-60 hover:opacity-100 hover:border-slate-600'
+                      }`}
+                    >
+                      <img src={img.src} alt="" className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+
+                {/* Live Dispatch Info */}
+                <div className="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-emerald-500 animate-ping" />
-                    <div>
-                      <h2 className="text-sm font-bold text-white uppercase tracking-wider">Canlı Operasyon Durumu</h2>
-                      <p className="text-xs text-slate-400">Ankara Geneli Çekiciler Göreve Hazır</p>
-                    </div>
-                  </div>
-                  <span className="px-2.5 py-1 rounded bg-brand-500/20 text-brand-400 text-xs font-bold border border-brand-500/30">
-                    7/24 NÖBETÇİ
-                  </span>
-                </div>
-
-                {/* Key Dispatch Highlights */}
-                <div className="py-5 space-y-4">
-                  <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800/80 flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-brand-500/10 text-brand-400 mt-0.5">
-                      <Zap className="w-5 h-5" />
+                    <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center">
+                      <img
+                        src={COMPANY_INFO.logoUrl}
+                        alt="Logo"
+                        className="w-8 h-8 object-contain"
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                      />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-white">Anında Koordinasyon & Yönlendirme</h3>
-                      <p className="text-xs text-slate-400 mt-0.5">
-                        Konumunuzu aldığımız an size en yakın mesafedeki kayar kasa çekicimiz hemen hareket eder.
-                      </p>
+                      <p className="text-xs font-bold text-white leading-tight">Halis Kırtepe</p>
+                      <p className="text-[11px] text-slate-400">Pınarbaşı Mah. Sincan</p>
                     </div>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800/80 flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-red-500/10 text-red-400 mt-0.5">
-                      <ShieldCheck className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-white">Halis Kırtepe Güvencesi</h3>
-                      <p className="text-xs text-slate-400 mt-0.5">
-                        Pınarbaşı Mah. Sincan merkezimizden 10 yılı aşkın oto kurtarma tecrübesiyle hasarsız nakliye.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800/80 flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 mt-0.5">
-                      <Star className="w-5 h-5 fill-emerald-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-white">4.9 / 5 Müşteri Memnuniyeti</h3>
-                      <p className="text-xs text-slate-400 mt-0.5">
-                        Güler yüzlü hizmet, şeffaf fiyat ve hızlı destekle binlerce kurtarılmış sürücü.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Direct Emergency Call Bar inside card */}
-                <div className="pt-2">
                   <a
                     href={COMPANY_INFO.telLink}
-                    className="w-full flex items-center justify-between p-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 text-white transition-all group"
+                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-emergency-600 hover:bg-emergency-500 text-white font-bold text-xs shadow-md transition-colors"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-red-600 flex items-center justify-center text-white font-bold group-hover:scale-105 transition-transform">
-                        <Phone className="w-4 h-4" />
-                      </div>
-                      <div className="text-left">
-                        <div className="text-[11px] text-slate-400">Çağrı Merkezi / Cep</div>
-                        <div className="text-sm font-bold text-white">{COMPANY_INFO.phone}</div>
-                      </div>
-                    </div>
-                    <span className="text-xs font-semibold text-brand-400 group-hover:translate-x-1 transition-transform">
-                      Hemen Bağlan →
-                    </span>
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>Hemen Bağlan</span>
                   </a>
                 </div>
 
@@ -219,4 +232,3 @@ export default function Hero() {
     </section>
   );
 }
-
