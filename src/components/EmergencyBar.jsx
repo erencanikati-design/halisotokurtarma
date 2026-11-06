@@ -1,56 +1,27 @@
-import React, { useState } from 'react';
-import { Phone, MessageCircle, Navigation, Loader2 } from 'lucide-react';
+import React from 'react';
+import { Phone, MessageCircle } from 'lucide-react';
 import { COMPANY_INFO } from '../data/constants';
-import { sendWhatsAppWithLocation } from '../utils/whatsapp';
 
 export default function EmergencyBar() {
-  const [loading, setLoading] = useState(false);
-
-  const handleWhatsAppClick = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    sendWhatsAppWithLocation(COMPANY_INFO.whatsappMessage, (status) => {
-      setLoading(false);
-    });
-  };
+  const whatsappUrl = `https://wa.me/905353579525?text=${encodeURIComponent("Merhaba Halis Bey, çekiciye ihtiyacım var yardımcı olur musunuz?")}`;
 
   return (
     <aside 
-      aria-label="Acil İletişim ve Konum Butonları"
+      aria-label="Acil İletişim Butonları"
       className="md:hidden fixed bottom-0 left-0 right-0 z-50 p-2.5 bg-white/95 backdrop-blur-xl border-t border-slate-200 shadow-[0_-8px_30px_rgba(15,23,42,0.12)]"
     >
       <div className="grid grid-cols-2 gap-2 max-w-lg mx-auto">
-        {/* WhatsApp Konum Gönder (Akıllı GPS Entegrasyonlu) */}
-        <button
-          type="button"
-          onClick={handleWhatsAppClick}
-          disabled={loading}
-          className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-whatsapp hover:bg-whatsapp-hover active:scale-95 text-white font-black text-sm shadow-md shadow-whatsapp/25 transition-all disabled:opacity-85 cursor-pointer"
+        {/* WhatsApp İle Yaz */}
+        <a
+          href={whatsappUrl}
+          className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-whatsapp hover:bg-whatsapp-hover active:scale-95 text-white font-black text-sm shadow-md shadow-whatsapp/25 transition-all cursor-pointer"
         >
-          <div className="relative">
-            {loading ? (
-              <Loader2 className="w-5 h-5 text-white animate-spin" />
-            ) : (
-              <>
-                <MessageCircle className="w-5 h-5 fill-white text-whatsapp" />
-                <Navigation className="w-2.5 h-2.5 absolute -top-1 -right-1 text-white animate-pulse" />
-              </>
-            )}
-          </div>
+          <MessageCircle className="w-5 h-5 fill-white text-whatsapp" />
           <span className="leading-tight text-center">
-            {loading ? (
-              <>
-                <span className="text-xs font-bold">Konum Alınıyor...</span><br />
-                <span className="text-[9px] font-medium opacity-90">Lütfen bekleyin</span>
-              </>
-            ) : (
-              <>
-                WhatsApp<br />
-                <span className="text-[10px] uppercase font-bold opacity-95">Konum At</span>
-              </>
-            )}
+            WhatsApp<br />
+            <span className="text-[10px] uppercase font-bold opacity-95">Mesaj Gönder</span>
           </span>
-        </button>
+        </a>
 
         {/* Hemen Ara 7/24 */}
         <a

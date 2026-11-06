@@ -60,19 +60,15 @@ export default function Hero() {
                 <span>Hemen Ara: {COMPANY_INFO.phone}</span>
               </a>
 
-              <button
-                type="button"
-                onClick={handleHeroWhatsApp}
-                disabled={locLoading}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-sm shadow-md shadow-emerald-500/20 transition-all hover:scale-105 active:scale-95 disabled:opacity-75 whitespace-nowrap cursor-pointer"
+              <a
+                href={`https://wa.me/905353579525?text=${encodeURIComponent("Merhaba Halis Bey, çekiciye ihtiyacım var yardımcı olur musunuz?")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-sm shadow-md shadow-emerald-500/20 transition-all hover:scale-105 active:scale-95 whitespace-nowrap cursor-pointer"
               >
-                {locLoading ? (
-                  <Loader2 className="w-4 h-4 animate-spin shrink-0 text-white" />
-                ) : (
-                  <MessageCircle className="w-4 h-4 fill-white text-whatsapp shrink-0" />
-                )}
-                <span>{locLoading ? 'Konum Alınıyor...' : 'WhatsApp ile Konum At'}</span>
-              </button>
+                <MessageCircle className="w-4 h-4 fill-white text-whatsapp shrink-0" />
+                <span>WhatsApp İle Ulaş</span>
+              </a>
             </div>
 
             {/* Clean Trust Indicators */}
